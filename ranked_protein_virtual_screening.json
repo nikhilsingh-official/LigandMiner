@@ -1,0 +1,2619 @@
+[
+  {
+    "protein": "Q8I1R6",
+    "probis_score": 50.2,
+    "num_training_ligands": 2,
+    "hits": [
+      {
+        "ligand_id": 153044,
+        "smiles": "Clc1cc(Cl)c(OCC#CI)cc1Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.3448275862068966,
+        "morgan_similarity": 0.1724137931034483,
+        "combined_2d_score": 0.27586206896551724,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1154427,
+        "smiles": "CCc1nc(N)nc(N)c1-c1ccc(Cl)cc1",
+        "training_affinity_type": "Ki",
+        "training_affinity_value": 0.85,
+        "pharm2d_similarity": 0.24675324675324675,
+        "morgan_similarity": 0.3,
+        "combined_2d_score": 0.26805194805194804,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 435153,
+        "smiles": "CCCC(C)C1(CC)C(=O)NC(=S)NC1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.38235294117647056,
+        "morgan_similarity": 0.09090909090909091,
+        "combined_2d_score": 0.2657754010695187,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4478404,
+        "smiles": "C=CCC1(C(C)CCC)C(=O)NC(=O)NC1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.38095238095238093,
+        "morgan_similarity": 0.08333333333333333,
+        "combined_2d_score": 0.26190476190476186,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 788848,
+        "smiles": "CC[C@H](C)C(=O)O[C@H]1C[C@@H](C)C=C2C=C[C@H](C)[C@H](CCC3C[C@@H](O)CC(=O)O3)[C@@H]12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.36363636363636365,
+        "morgan_similarity": 0.08064516129032258,
+        "combined_2d_score": 0.2504398826979472,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 491330,
+        "smiles": "COC(=O)[C@@H]1CC2=CC(=O)CC[C@]2(C)[C@@]23O[C@@H]2C[C@@]2(C)[C@@H](CC[C@@]22CCC(=O)O2)[C@H]13",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.38235294117647056,
+        "morgan_similarity": 0.046875,
+        "combined_2d_score": 0.2481617647058823,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1141902,
+        "smiles": "CCC[C@H](C)C1(C(=O)NC(=O)NC1=O)CC",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.3333333333333333,
+        "morgan_similarity": 0.0967741935483871,
+        "combined_2d_score": 0.23870967741935484,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 817941,
+        "smiles": "CCCCCCCCCCCCCCCCOP([O-])(=O)OCC[N+](C)(C)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.35135135135135137,
+        "morgan_similarity": 0.05714285714285714,
+        "combined_2d_score": 0.23366795366795368,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 824665,
+        "smiles": "Cc1ccc(nc1)-c1ccc(C)cn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2608695652173913,
+        "morgan_similarity": 0.19047619047619047,
+        "combined_2d_score": 0.23271221532091096,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 256287,
+        "smiles": "C\\C(=C/CO)\\C=C\\C=C(/C)\\C=C\\C1=C(C)CCCC1(C)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.34285714285714286,
+        "morgan_similarity": 0.06666666666666667,
+        "combined_2d_score": 0.23238095238095238,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 256288,
+        "smiles": "CC1=C(C(CCC1)(C)C)/C=C/C(=C/C=C/C(=C/CO)/C)/C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.34285714285714286,
+        "morgan_similarity": 0.06666666666666667,
+        "combined_2d_score": 0.23238095238095238,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 698395,
+        "smiles": "Clc1ccc(CCCOCCCN2CCCCC2)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2962962962962963,
+        "morgan_similarity": 0.13513513513513514,
+        "combined_2d_score": 0.2318318318318318,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2744359,
+        "smiles": "CC(=O)O[C@]1(C(C)=O)CC[C@H]2[C@@H]3C=C(Cl)C4=CC(=O)CC[C@]4(C)[C@H]3CC[C@@]21C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.3181818181818182,
+        "morgan_similarity": 0.09433962264150944,
+        "combined_2d_score": 0.22864493996569468,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 635582,
+        "smiles": "CC1=CC(=O)c2ccccc2C1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2962962962962963,
+        "morgan_similarity": 0.1111111111111111,
+        "combined_2d_score": 0.2222222222222222,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2979270,
+        "smiles": "C[C@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]21C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.32608695652173914,
+        "morgan_similarity": 0.06,
+        "combined_2d_score": 0.21965217391304348,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 243626,
+        "smiles": "CC(C)(c1cccnc1)C(=O)c2cccnc2",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.28205128205128205,
+        "morgan_similarity": 0.11764705882352941,
+        "combined_2d_score": 0.21628959276018098,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 609514,
+        "smiles": "CC(=O)S[C@@H]1CC2=CC(=O)CC[C@]2(C)[C@H]2CC[C@@]3(C)[C@@H](CC[C@@]33CCC(=O)O3)[C@H]12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.32558139534883723,
+        "morgan_similarity": 0.05172413793103448,
+        "combined_2d_score": 0.21603849238171613,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 249635,
+        "smiles": "C[C@]12CC[C@H]3[C@@H](CC=C4C[C@@H](O)CC[C@]34C)[C@@H]1CCC2=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.30952380952380953,
+        "morgan_similarity": 0.06976744186046512,
+        "combined_2d_score": 0.21362126245847177,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1333343,
+        "smiles": "c1ccc2c(c1)C3=NCCN3[C@]2(c4ccc(cc4)Cl)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.26666666666666666,
+        "morgan_similarity": 0.12195121951219512,
+        "combined_2d_score": 0.20878048780487807,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 999242,
+        "smiles": "CCCC(N1CCCC1)C(=O)c1ccc(C)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2777777777777778,
+        "morgan_similarity": 0.10526315789473684,
+        "combined_2d_score": 0.2087719298245614,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 836353,
+        "smiles": "Nc1nnc(c(N)n1)-c1cccc(Cl)c1Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19444444444444445,
+        "morgan_similarity": 0.22580645161290322,
+        "combined_2d_score": 0.20698924731182797,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3037097,
+        "smiles": "CC(=O)OCC(=O)[C@@]12OC(C)(C)O[C@@H]1C[C@H]1[C@@H]3C[C@H](F)C4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]12C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.30434782608695654,
+        "morgan_similarity": 0.057971014492753624,
+        "combined_2d_score": 0.20579710144927538,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 789905,
+        "smiles": "CCC(=O)O[C@H]1CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2916666666666667,
+        "morgan_similarity": 0.07547169811320754,
+        "combined_2d_score": 0.20518867924528303,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785712,
+        "smiles": "C#C[C@]1(OC(C)=O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@@H]4[C@H]3CC[C@@]21C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.30434782608695654,
+        "morgan_similarity": 0.05357142857142857,
+        "combined_2d_score": 0.20403726708074535,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 336164,
+        "smiles": "CCC1(C)CC(=O)NC1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2608695652173913,
+        "morgan_similarity": 0.1111111111111111,
+        "combined_2d_score": 0.20096618357487922,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 917542,
+        "smiles": "CCCNC(=O)NS(=O)(=O)c1ccc(Cl)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.21568627450980393,
+        "morgan_similarity": 0.17142857142857143,
+        "combined_2d_score": 0.19798319327731095,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 132301,
+        "smiles": "COCCCC\\C(=N/OCCN)c1ccc(cc1)C(F)(F)F",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.25396825396825395,
+        "morgan_similarity": 0.11363636363636363,
+        "combined_2d_score": 0.1978354978354978,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 299995,
+        "smiles": "c1c(cc(c(c1S(=O)(=O)N)Cl)Cl)S(=O)(=O)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2033898305084746,
+        "morgan_similarity": 0.18518518518518517,
+        "combined_2d_score": 0.19610797237915883,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785220,
+        "smiles": "CC(=O)OCC(=O)[C@@]1(OC(C)=O)[C@@H](C)C[C@H]2[C@@H]3C[C@H](F)C4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]21C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2777777777777778,
+        "morgan_similarity": 0.06060606060606061,
+        "combined_2d_score": 0.19090909090909092,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 5564223,
+        "smiles": "CC1(C)O[C@@H]2C[C@H]3[C@@H]4C[C@H](F)C5=CC(=O)C=C[C@]5(C)[C@@]4(F)[C@@H](O)C[C@]3(C)[C@]2(C(=O)CO)O1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.27586206896551724,
+        "morgan_similarity": 0.0625,
+        "combined_2d_score": 0.19051724137931034,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 658645,
+        "smiles": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@H]2O)CCC4=CC(=O)CC[C@]34C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2708333333333333,
+        "morgan_similarity": 0.06666666666666667,
+        "combined_2d_score": 0.18916666666666665,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 914550,
+        "smiles": "CC(=O)[C@H]1CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2727272727272727,
+        "morgan_similarity": 0.0625,
+        "combined_2d_score": 0.1886363636363636,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 681418,
+        "smiles": "O=C1C(C(=O)c2ccccc12)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.23255813953488372,
+        "morgan_similarity": 0.12,
+        "combined_2d_score": 0.18753488372093025,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 368087,
+        "smiles": "N#Cc1ccc(cc1)C(c1ccc(cc1)C#N)n1cncn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2553191489361702,
+        "morgan_similarity": 0.08571428571428572,
+        "combined_2d_score": 0.18747720364741638,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785278,
+        "smiles": "CC[C@]1(O)CC[C@H]2[C@@H]3CCC4=CCCC[C@@H]4[C@H]3CC[C@@]21C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2549019607843137,
+        "morgan_similarity": 0.0851063829787234,
+        "combined_2d_score": 0.18698372966207757,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785603,
+        "smiles": "CC(=O)OCC(=O)[C@@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]21C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.26785714285714285,
+        "morgan_similarity": 0.06557377049180328,
+        "combined_2d_score": 0.18694379391100702,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1023030,
+        "smiles": "c1ccc2c(c1)c(no2)CS(=O)(=O)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.20512820512820512,
+        "morgan_similarity": 0.15625,
+        "combined_2d_score": 0.18557692307692308,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 662996,
+        "smiles": "CC(N(O)C(N)=O)c1cc2ccccc2s1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.24074074074074073,
+        "morgan_similarity": 0.10256410256410256,
+        "combined_2d_score": 0.18547008547008545,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 769630,
+        "smiles": "[O-][N+](=O)c1cc(ccc1C(=O)C1C(=O)CCCC1=O)C(F)(F)F",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.27906976744186046,
+        "morgan_similarity": 0.043478260869565216,
+        "combined_2d_score": 0.18483316481294237,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1352555,
+        "smiles": "C[C@@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)C3=CC[C@]2(C)[C@@]1(O)C(=O)CO",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2571428571428571,
+        "morgan_similarity": 0.07017543859649122,
+        "combined_2d_score": 0.18235588972431077,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2711523,
+        "smiles": "CCCCC1C(=O)N(c2ccccc2)N(c2ccccc2)C1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2222222222222222,
+        "morgan_similarity": 0.12121212121212122,
+        "combined_2d_score": 0.18181818181818182,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 837733,
+        "smiles": "CC1=C(C=C(C(=O)N1)C#N)c2ccncc2",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.23255813953488372,
+        "morgan_similarity": 0.10526315789473684,
+        "combined_2d_score": 0.18164014687882496,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1245744,
+        "smiles": "CC(C)(C#N)c1cc(Cn2cncn2)cc(c1)C(C)(C)C#N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.21428571428571427,
+        "morgan_similarity": 0.13157894736842105,
+        "combined_2d_score": 0.18120300751879698,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 688527,
+        "smiles": "CCCC(CCC)C(=O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.24324324324324326,
+        "morgan_similarity": 0.08695652173913043,
+        "combined_2d_score": 0.18072855464159812,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 843337,
+        "smiles": "CC[C@H]1[C@H](COC1=O)Cc2cncn2C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.21568627450980393,
+        "morgan_similarity": 0.125,
+        "combined_2d_score": 0.17941176470588238,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 843340,
+        "smiles": "CC[C@H]1[C@@H](Cc2cncn2C)COC1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.21568627450980393,
+        "morgan_similarity": 0.125,
+        "combined_2d_score": 0.17941176470588238,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 982164,
+        "smiles": "CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1728395061728395,
+        "morgan_similarity": 0.1891891891891892,
+        "combined_2d_score": 0.17937937937937937,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785884,
+        "smiles": "CN(C)CC[C@@H](c1ccc(Cl)cc1)c1ccccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1728395061728395,
+        "morgan_similarity": 0.1891891891891892,
+        "combined_2d_score": 0.17937937937937937,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 184820,
+        "smiles": "C[C@]12[C@@H]3CC[C@@H](O3)[C@@]1(C)C(=O)OC2=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.25,
+        "morgan_similarity": 0.07142857142857142,
+        "combined_2d_score": 0.17857142857142858,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 184821,
+        "smiles": "C[C@]12[C@@H]3CC[C@@H](O3)[C@@]1(C)C(=O)OC2=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.25,
+        "morgan_similarity": 0.07142857142857142,
+        "combined_2d_score": 0.17857142857142858,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1100241,
+        "smiles": "CC(N)COc1c(C)cccc1C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17647058823529413,
+        "morgan_similarity": 0.17857142857142858,
+        "combined_2d_score": 0.1773109243697479,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 959968,
+        "smiles": "O=C(OCc1ccccc1)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.22580645161290322,
+        "morgan_similarity": 0.10344827586206896,
+        "combined_2d_score": 0.1768631813125695,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 306478,
+        "smiles": "C[C@H](CCCC(C)(C)O)[C@H]1CC[C@H]2\\C(CCC[C@]12C)=C\\C=C1\\C[C@@H](O)C[C@H](O)C1=C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.26153846153846155,
+        "morgan_similarity": 0.047619047619047616,
+        "combined_2d_score": 0.17597069597069598,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 948636,
+        "smiles": "CS(=O)(=O)c1ccc(cc1)C2=C(C(=O)OC2)c3ccccc3",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.23809523809523808,
+        "morgan_similarity": 0.07894736842105263,
+        "combined_2d_score": 0.1744360902255639,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 341192,
+        "smiles": "C[C@@H](Cc1ccc(O)c(O)c1)[C@H](C)Cc1ccc(O)c(O)c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19101123595505617,
+        "morgan_similarity": 0.14814814814814814,
+        "combined_2d_score": 0.17386600083229298,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 46413,
+        "smiles": "CCC(=C)C(=O)c1ccc(c(c1Cl)Cl)OCC(=O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.18681318681318682,
+        "morgan_similarity": 0.15384615384615385,
+        "combined_2d_score": 0.17362637362637362,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 643426,
+        "smiles": "Cc1ccc(cn1)-c1ncc(Cl)cc1-c1ccc(cc1)S(C)(=O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.189873417721519,
+        "morgan_similarity": 0.14634146341463414,
+        "combined_2d_score": 0.17246063599876504,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 114987,
+        "smiles": "CO[C@@H]1C[C@H](C[C@@H](C)[C@@H]2CC(=O)[C@H](C)\\C=C(C)\\[C@@H](O)[C@@H](OC)C(=O)[C@H](C)C[C@H](C)\\C=C\\C=C\\C=C(C)\\[C@H](C[C@@H]3CC[C@@H](C)[C@@](O)(O3)C(=O)C(=O)N3CCCC[C@H]3C(=O)O2)OC)CC[C@H]1OC(=O)C(C)(CO)CO",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.26229508196721313,
+        "morgan_similarity": 0.034782608695652174,
+        "combined_2d_score": 0.17129009265858874,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 158780,
+        "smiles": "CNC(=O)Oc1cccc2ccccc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.225,
+        "morgan_similarity": 0.08823529411764706,
+        "combined_2d_score": 0.17029411764705885,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3473524,
+        "smiles": "C#CC1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@@H]4[C@H]3CC[C@@]21CC",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.23214285714285715,
+        "morgan_similarity": 0.07692307692307693,
+        "combined_2d_score": 0.17005494505494506,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 854481,
+        "smiles": "CCCCCc1cc(O)c([C@@H]2C=C(C)CC[C@H]2C(C)=C)c(O)c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.225,
+        "morgan_similarity": 0.08695652173913043,
+        "combined_2d_score": 0.16978260869565218,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 858566,
+        "smiles": "CO[C@@H]1C[C@@H](CC[C@H]1O)\\C=C(/C)[C@H]1OC(=O)[C@@H]2CCCCN2C(=O)C(=O)[C@]2(O)O[C@@H]([C@H](C[C@H]2C)OC)[C@H](C[C@@H](C)C\\C(C)=C\\[C@@H](CC=C)C(=O)C[C@H](O)[C@H]1C)OC",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2537313432835821,
+        "morgan_similarity": 0.043478260869565216,
+        "combined_2d_score": 0.16963011031797534,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 858570,
+        "smiles": "CO[C@@H]1C[C@@H](CC[C@H]1O)\\C=C(/C)[C@H]1OC(=O)[C@@H]2CCCCN2C(=O)C(=O)[C@]2(O)O[C@@H]([C@H](C[C@H]2C)OC)[C@H](C[C@@H](C)C\\C(C)=C\\[C@@H](CC=C)C(=O)C[C@H](O)[C@H]1C)OC |r,t:45|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2537313432835821,
+        "morgan_similarity": 0.043478260869565216,
+        "combined_2d_score": 0.16963011031797534,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4267609,
+        "smiles": "C=CC[C@@H]1/C=C(\\C)C[C@H](C)C[C@H](OC)[C@H]2O[C@@](O)(C(=O)C(=O)N3CCCC[C@H]3C(=O)O[C@H](/C(C)=C/[C@@H]3CC[C@@H](O)[C@H](OC)C3)[C@H](C)[C@@H](O)CC1=O)[C@H](C)C[C@@H]2OC.O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2537313432835821,
+        "morgan_similarity": 0.043010752688172046,
+        "combined_2d_score": 0.16944310704541807,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 169709,
+        "smiles": "CCCN(CCC)S(=O)(=O)c1ccc(cc1)C(=O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2028985507246377,
+        "morgan_similarity": 0.11764705882352941,
+        "combined_2d_score": 0.1687979539641944,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1093384,
+        "smiles": "C[C@]12CC[C@H]3[C@@H](CCC4=CC(=O)CC[C@H]34)[C@@H]1CC[C@@]2(O)C#C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.24074074074074073,
+        "morgan_similarity": 0.06,
+        "combined_2d_score": 0.16844444444444442,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4047618,
+        "smiles": "CCCS(=O)(=O)N[C@H]1C[C@@H](N(C)c2ncnc3[nH]ccc23)C1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2,
+        "morgan_similarity": 0.12,
+        "combined_2d_score": 0.16799999999999998,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 108461,
+        "smiles": "CC(=O)CCCCN1C(=O)c2c(ncn2C)N(C1=O)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2,
+        "morgan_similarity": 0.11904761904761904,
+        "combined_2d_score": 0.1676190476190476,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 588283,
+        "smiles": "Cc1onc(c1-c1ccc(cc1)S(N)(=O)=O)-c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19318181818181818,
+        "morgan_similarity": 0.1282051282051282,
+        "combined_2d_score": 0.16719114219114217,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 5282274,
+        "smiles": "CCN(CC)CCCC(C)Nc1ccnc2cc(Cl)ccc12.O=P(O)(O)O.O=P(O)(O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.18823529411764706,
+        "morgan_similarity": 0.1346153846153846,
+        "combined_2d_score": 0.1667873303167421,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 649816,
+        "smiles": "Nc1ccc(cc1)S(=O)(=O)c1ccc(N)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1509433962264151,
+        "morgan_similarity": 0.19047619047619047,
+        "combined_2d_score": 0.16675651392632523,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 174139,
+        "smiles": "CCC1(C(=O)NC(=O)NC1=O)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1875,
+        "morgan_similarity": 0.13333333333333333,
+        "combined_2d_score": 0.16583333333333333,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 164650,
+        "smiles": "CCCCCc1cc(O)c2[C@@H]3C=C(C)CC[C@H]3C(C)(C)Oc2c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2236842105263158,
+        "morgan_similarity": 0.07692307692307693,
+        "combined_2d_score": 0.16497975708502025,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1148024,
+        "smiles": "CCN(CC)CCC[C@@H](C)Nc1ccnc2c1ccc(c2)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1728395061728395,
+        "morgan_similarity": 0.15217391304347827,
+        "combined_2d_score": 0.16457326892109503,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 704990,
+        "smiles": "Cc1ccnc2c1NC(=O)c3cccnc3N2C4CC4",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.21428571428571427,
+        "morgan_similarity": 0.08888888888888889,
+        "combined_2d_score": 0.16412698412698412,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 451769,
+        "smiles": "CCOC(=O)N1CCC(CC1)=C1c2ccc(Cl)cc2CCc2cccnc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1839080459770115,
+        "morgan_similarity": 0.1320754716981132,
+        "combined_2d_score": 0.16317501626545217,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 924455,
+        "smiles": "CCC1(CCC(=O)NC1=O)c1ccc(N)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15584415584415584,
+        "morgan_similarity": 0.17142857142857143,
+        "combined_2d_score": 0.16207792207792207,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 885555,
+        "smiles": "CN(C)CCOC(c1ccccc1)c1ccccc1C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19642857142857142,
+        "morgan_similarity": 0.10810810810810811,
+        "combined_2d_score": 0.1611003861003861,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785515,
+        "smiles": "CC(=O)N(c1onc(C)c1C)S(=O)(=O)c1ccc(N)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16981132075471697,
+        "morgan_similarity": 0.14634146341463414,
+        "combined_2d_score": 0.16042337781868382,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 400268,
+        "smiles": "COc1cc(cc(c1OC)OC)Cc2cnc(nc2N)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13513513513513514,
+        "morgan_similarity": 0.19444444444444445,
+        "combined_2d_score": 0.15885885885885886,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 472318,
+        "smiles": "CCCCNC(=O)NS(=O)(=O)c1ccc(C)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1935483870967742,
+        "morgan_similarity": 0.10526315789473684,
+        "combined_2d_score": 0.15823429541595924,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1039672,
+        "smiles": "C[C@@H]1CCN(C[C@@H]1N(C)c1ncnc2[nH]ccc12)C(=O)CC#N |r|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19444444444444445,
+        "morgan_similarity": 0.10344827586206896,
+        "combined_2d_score": 0.15804597701149425,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1039676,
+        "smiles": "C[C@@H]1CCN(C[C@@H]1N(C)c1ncnc2[nH]ccc12)C(=O)CC#N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19444444444444445,
+        "morgan_similarity": 0.10344827586206896,
+        "combined_2d_score": 0.15804597701149425,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3126540,
+        "smiles": "Cc1ncc(C[n+]2csc(CCO)c2C)c(N)n1.[Cl-]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15476190476190477,
+        "morgan_similarity": 0.16279069767441862,
+        "combined_2d_score": 0.15797342192691033,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1196546,
+        "smiles": "c1cc(c(cc1Cl)O)Oc2ccc(cc2Cl)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17105263157894737,
+        "morgan_similarity": 0.13793103448275862,
+        "combined_2d_score": 0.15780399274047185,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4275394,
+        "smiles": "CN(C)c1ccc2nc3ccc(N(C)C)cc3[s+]c2c1.[Cl-]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1724137931034483,
+        "morgan_similarity": 0.13333333333333333,
+        "combined_2d_score": 0.1567816091954023,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 537568,
+        "smiles": "NCC(CC(O)=O)c1ccc(Cl)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12781954887218044,
+        "morgan_similarity": 0.2,
+        "combined_2d_score": 0.15669172932330827,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1254812,
+        "smiles": "NC(=O)C[S@@](=O)C(c1ccccc1)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1744186046511628,
+        "morgan_similarity": 0.12903225806451613,
+        "combined_2d_score": 0.15626406601650414,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1254813,
+        "smiles": "NC(=O)CS(=O)C(c1ccccc1)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1744186046511628,
+        "morgan_similarity": 0.12903225806451613,
+        "combined_2d_score": 0.15626406601650414,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1272897,
+        "smiles": "CN1CCC[C@@H]1CCO[C@](C)(c1ccccc1)c1ccc(Cl)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16883116883116883,
+        "morgan_similarity": 0.13636363636363635,
+        "combined_2d_score": 0.15584415584415584,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 740536,
+        "smiles": "CCOC(=O)c1ccc(nc1)C#Cc1ccc2SCCC(C)(C)c2c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2,
+        "morgan_similarity": 0.08928571428571429,
+        "combined_2d_score": 0.15571428571428572,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1103757,
+        "smiles": "c1ccc(cc1)C(c2ccccc2)(c3ccccc3Cl)n4ccnc4",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16666666666666666,
+        "morgan_similarity": 0.1388888888888889,
+        "combined_2d_score": 0.15555555555555556,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 179563,
+        "smiles": "c1cc(cnc1)C(=O)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16,
+        "morgan_similarity": 0.14814814814814814,
+        "combined_2d_score": 0.15525925925925926,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1306458,
+        "smiles": "CN(C)CCC(c1ccc(Br)cc1)c1ccccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1728395061728395,
+        "morgan_similarity": 0.1282051282051282,
+        "combined_2d_score": 0.15498575498575498,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 779602,
+        "smiles": "Nc1ccncc1N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.09090909090909091,
+        "morgan_similarity": 0.25,
+        "combined_2d_score": 0.15454545454545454,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1224353,
+        "smiles": "COc1ccc(cc1)C1C(=O)c2ccccc2C1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17142857142857143,
+        "morgan_similarity": 0.12903225806451613,
+        "combined_2d_score": 0.1544700460829493,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 965452,
+        "smiles": "CC1=C(C(CCC1)(C)C)/C=C/C(=C/C=C/C(=C/C(=O)O)/C)/C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.22727272727272727,
+        "morgan_similarity": 0.043478260869565216,
+        "combined_2d_score": 0.15375494071146245,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 965455,
+        "smiles": "C\\C(\\C=C\\C1=C(C)CCCC1(C)C)=C/C=C/C(/C)=C\\C(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.22727272727272727,
+        "morgan_similarity": 0.043478260869565216,
+        "combined_2d_score": 0.15375494071146245,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 965456,
+        "smiles": "C\\C(\\C=C\\C1=C(C)CCCC1(C)C)=C/C=C/C(/C)=C/C(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.22727272727272727,
+        "morgan_similarity": 0.043478260869565216,
+        "combined_2d_score": 0.15375494071146245,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 965458,
+        "smiles": "C\\C(\\C=C\\C1=C(C)CCCC1(C)C)=C\\C=C\\C(\\C)=C\\C(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.22727272727272727,
+        "morgan_similarity": 0.043478260869565216,
+        "combined_2d_score": 0.15375494071146245,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3179599,
+        "smiles": "CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1.O=C(O)/C=C\\C(=O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1504424778761062,
+        "morgan_similarity": 0.15555555555555556,
+        "combined_2d_score": 0.15248770894788594,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1269694,
+        "smiles": "CC(C(O)=O)c1ccc(CC2CCCC2=O)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.18888888888888888,
+        "morgan_similarity": 0.0975609756097561,
+        "combined_2d_score": 0.15235772357723576,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 452505,
+        "smiles": "OC(=O)CCCc1ccc(cc1)N(CCCl)CCCl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17857142857142858,
+        "morgan_similarity": 0.1111111111111111,
+        "combined_2d_score": 0.15158730158730158,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 114096,
+        "smiles": "Cc1ccc(cc1)C(=C/CN1CCCC1)\\c1ccccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1728395061728395,
+        "morgan_similarity": 0.11627906976744186,
+        "combined_2d_score": 0.15021533161068046,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 114098,
+        "smiles": "Cc1ccc(cc1)C(=C/CN1CCCC1)\\c1ccccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1728395061728395,
+        "morgan_similarity": 0.11627906976744186,
+        "combined_2d_score": 0.15021533161068046,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 16154,
+        "smiles": "CCCCCCCCCCC[C@@H](C[C@@H]1OC(=O)[C@H]1CCCCCC)OC(=O)[C@H](CC(C)C)NC=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.21621621621621623,
+        "morgan_similarity": 0.05084745762711865,
+        "combined_2d_score": 0.1500687127805772,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 16159,
+        "smiles": "CCCCCCCCCCC[C@@H](C[C@@H]1OC(=O)[C@H]1CCCCCC)OC(=O)[C@H](CC(C)C)NC=O |r|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.21621621621621623,
+        "morgan_similarity": 0.05084745762711865,
+        "combined_2d_score": 0.1500687127805772,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3366508,
+        "smiles": "COC(=O)[C@H]1[C@@H](c2ccc(I)cc2)C[C@@H]2CC[C@H]1N2CCCF",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19767441860465115,
+        "morgan_similarity": 0.07547169811320754,
+        "combined_2d_score": 0.14879333040807372,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2739195,
+        "smiles": "CC[N+](C)(C)Cc1ccccc1Br.Cc1ccc(S(=O)(=O)[O-])cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.18421052631578946,
+        "morgan_similarity": 0.09523809523809523,
+        "combined_2d_score": 0.14862155388471177,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1213,
+        "smiles": "CN1c2ccc(cc2C(=NCC1=O)c3ccccc3)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15,
+        "morgan_similarity": 0.14634146341463414,
+        "combined_2d_score": 0.14853658536585365,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1271154,
+        "smiles": "CC(C)OC(=O)C(C)(C)Oc1ccc(cc1)C(=O)c2ccc(cc2)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16176470588235295,
+        "morgan_similarity": 0.1282051282051282,
+        "combined_2d_score": 0.14834087481146305,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1221217,
+        "smiles": "c1cc2c(cc1Cl)[C@@](OC(=O)N2)(C#CC3CC3)C(F)(F)F",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19101123595505617,
+        "morgan_similarity": 0.08333333333333333,
+        "combined_2d_score": 0.14794007490636704,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1221218,
+        "smiles": "FC(F)(F)[C@]1(OC(=O)Nc2ccc(Cl)cc12)C#CC1CC1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19101123595505617,
+        "morgan_similarity": 0.08333333333333333,
+        "combined_2d_score": 0.14794007490636704,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 714243,
+        "smiles": "Nc1ccncc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.05,
+        "morgan_similarity": 0.29411764705882354,
+        "combined_2d_score": 0.1476470588235294,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 140356,
+        "smiles": "C(C1=NCCN1)c1cccc2ccccc12 |t:1|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17142857142857143,
+        "morgan_similarity": 0.1111111111111111,
+        "combined_2d_score": 0.1473015873015873,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 743999,
+        "smiles": "C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)C=C[C@]34C)[C@@H]1CC[C@]2(O)C(=O)CO",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1978021978021978,
+        "morgan_similarity": 0.07142857142857142,
+        "combined_2d_score": 0.14725274725274726,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 408712,
+        "smiles": "c1cc(cnc1)CC(O)(P(=O)(O)O)P(=O)(O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16666666666666666,
+        "morgan_similarity": 0.11764705882352941,
+        "combined_2d_score": 0.14705882352941174,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785711,
+        "smiles": "C#CCN[C@@H]1CCc2ccccc21.CS(=O)(=O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1794871794871795,
+        "morgan_similarity": 0.0975609756097561,
+        "combined_2d_score": 0.14671669793621012,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4004535,
+        "smiles": "CCC(=O)O[C@]1(C(=O)CO)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@@]21C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.19767441860465115,
+        "morgan_similarity": 0.07017543859649122,
+        "combined_2d_score": 0.14667482660138717,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 687215,
+        "smiles": "Cc1noc(NS(=O)(=O)c2ccc(N)cc2)c1C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13333333333333333,
+        "morgan_similarity": 0.16666666666666666,
+        "combined_2d_score": 0.14666666666666667,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1131777,
+        "smiles": "c1ccc(cc1)NC(=O)CCCCCCC(=O)NO",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1836734693877551,
+        "morgan_similarity": 0.09090909090909091,
+        "combined_2d_score": 0.14656771799628943,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 618643,
+        "smiles": "CN1CCCC(CC1)n1nc(Cc2ccc(Cl)cc2)c2ccccc2c1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1509433962264151,
+        "morgan_similarity": 0.14,
+        "combined_2d_score": 0.14656603773584906,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3250006,
+        "smiles": "CNc1ccc(/C=C/c2ccc(OCCOCCOCC[18F])nc2)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16455696202531644,
+        "morgan_similarity": 0.11904761904761904,
+        "combined_2d_score": 0.14635322483423746,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 523948,
+        "smiles": "[#6]-[#6]-[#8]-[#6](=O)-[#7]-1-[#6]-[#6]\\[#6](-[#6]-[#6]-1)=[#6]-1\\c2ccc(Cl)cc2-[#6]-[#6]-c2cccnc-12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1839080459770115,
+        "morgan_similarity": 0.08928571428571429,
+        "combined_2d_score": 0.14605911330049262,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 155450,
+        "smiles": "C[C@H](c1cnc[nH]1)c1cccc(C)c1C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16666666666666666,
+        "morgan_similarity": 0.11428571428571428,
+        "combined_2d_score": 0.1457142857142857,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1354902,
+        "smiles": "CN(C)CCOC(c1ccccc1)c2ccccc2",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15384615384615385,
+        "morgan_similarity": 0.13333333333333333,
+        "combined_2d_score": 0.14564102564102566,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 537310,
+        "smiles": "C[C@@H]1CC[C@@]23CCC(=O)[C@H]2[C@]1(C)[C@@H](C[C@@](C)(C=C)[C@@H](O)[C@@H]3C)OC(=O)CS[C@@H]1CC[C@@H](N)C[C@H]1O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.20454545454545456,
+        "morgan_similarity": 0.05714285714285714,
+        "combined_2d_score": 0.1455844155844156,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785050,
+        "smiles": "CCOC(=O)C1=C[C@@H](OC(CC)CC)[C@H](NC(C)=O)[C@@H](N)C1.O=P(O)(O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17647058823529413,
+        "morgan_similarity": 0.09803921568627451,
+        "combined_2d_score": 0.14509803921568626,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785106,
+        "smiles": "CN(C)CCOC(c1ccccc1)c1ccccc1.Cn1c(=O)c2[nH]c(Cl)nc2n(C)c1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15151515151515152,
+        "morgan_similarity": 0.1346153846153846,
+        "combined_2d_score": 0.14475524475524476,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 197393,
+        "smiles": "C[C@]12CC[C@H]3[C@@H](CCc4cc(O)ccc34)[C@@H]1CCC2=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1794871794871795,
+        "morgan_similarity": 0.09090909090909091,
+        "combined_2d_score": 0.14405594405594405,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 44478,
+        "smiles": "CC(=O)[C@H]1CC[C@H]2[C@@H]3CC[C@H]4C[C@H](O)CC[C@]4(C)[C@H]3CC[C@]12C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.22413793103448276,
+        "morgan_similarity": 0.022727272727272728,
+        "combined_2d_score": 0.14357366771159874,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 752700,
+        "smiles": "CC[N+](CC)(CCNC(=O)C(=O)NCC[N+](CC)(CC)Cc1ccccc1Cl)Cc1ccccc1Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13043478260869565,
+        "morgan_similarity": 0.16216216216216217,
+        "combined_2d_score": 0.14312573443008225,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 165111,
+        "smiles": "CC(C)Cc1ccc(CC(O)=O)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14285714285714285,
+        "morgan_similarity": 0.14285714285714285,
+        "combined_2d_score": 0.14285714285714285,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4018406,
+        "smiles": "N=C(N)c1ccc(OCCCCCOc2ccc(C(=N)N)cc2)cc1.O=S(=O)(O)CCO.O=S(=O)(O)CCO",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17142857142857143,
+        "morgan_similarity": 0.1,
+        "combined_2d_score": 0.14285714285714285,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1016127,
+        "smiles": "c1cc(ccc1CN)S(=O)(=O)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13114754098360656,
+        "morgan_similarity": 0.16,
+        "combined_2d_score": 0.14268852459016396,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 186816,
+        "smiles": "OC1N=C(c2ccccc2Cl)c2cc(Cl)ccc2NC1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16,
+        "morgan_similarity": 0.11627906976744186,
+        "combined_2d_score": 0.14251162790697675,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 477903,
+        "smiles": "Cc1nnc2CN=C(c3ccccc3Cl)c3cc(Cl)ccc3-n12 |t:6|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14705882352941177,
+        "morgan_similarity": 0.13333333333333333,
+        "combined_2d_score": 0.1415686274509804,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1264932,
+        "smiles": "CC(=O)NCCc1cccc2c1cc(cc2)OC",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17391304347826086,
+        "morgan_similarity": 0.09302325581395349,
+        "combined_2d_score": 0.14155712841253792,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 300957,
+        "smiles": "CCCCNc1ccc(cc1)C(=O)OCCN(C)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1724137931034483,
+        "morgan_similarity": 0.09523809523809523,
+        "combined_2d_score": 0.14154351395730708,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 923129,
+        "smiles": "Nc1cc(c[nH]c1=O)-c1ccncc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1276595744680851,
+        "morgan_similarity": 0.16129032258064516,
+        "combined_2d_score": 0.14111187371310913,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4429879,
+        "smiles": "CCCC(CCC)C(=O)[O-].[Na+]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.18181818181818182,
+        "morgan_similarity": 0.08,
+        "combined_2d_score": 0.1410909090909091,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1091606,
+        "smiles": "Cc1oncc1C(=O)Nc1ccc(cc1)C(F)(F)F",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16981132075471697,
+        "morgan_similarity": 0.0975609756097561,
+        "combined_2d_score": 0.14091118269673264,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 199307,
+        "smiles": "CC(C)Cn1cnc2c(N)nc3ccccc3c12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11428571428571428,
+        "morgan_similarity": 0.1794871794871795,
+        "combined_2d_score": 0.14036630036630038,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3238994,
+        "smiles": "O=C([O-])CCCc1ccccc1.[Na+]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16666666666666666,
+        "morgan_similarity": 0.1,
+        "combined_2d_score": 0.14,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 650214,
+        "smiles": "CC(C)(C(=O)O)Oc1ccc(cc1)C(=O)c2ccc(cc2)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1346153846153846,
+        "morgan_similarity": 0.14705882352941177,
+        "combined_2d_score": 0.13959276018099548,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1046592,
+        "smiles": "Cc1nnc2CN=C(c3cc(Br)sc3-n12)c1ccccc1Cl |c:6|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14705882352941177,
+        "morgan_similarity": 0.1276595744680851,
+        "combined_2d_score": 0.1392991239048811,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 343793,
+        "smiles": "CC(C)Cc1ccc(cc1)[C@H](C)C(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14285714285714285,
+        "morgan_similarity": 0.13333333333333333,
+        "combined_2d_score": 0.13904761904761903,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 343795,
+        "smiles": "CC(C)Cc1ccc(cc1)[C@H](C)C(O)=O |r|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14285714285714285,
+        "morgan_similarity": 0.13333333333333333,
+        "combined_2d_score": 0.13904761904761903,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 448843,
+        "smiles": "Clc1ccc2c(CCc3cccnc3C2=C2CCNCC2)c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15384615384615385,
+        "morgan_similarity": 0.11627906976744186,
+        "combined_2d_score": 0.13881932021466906,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2785493,
+        "smiles": "CCCCCCCCCCCCCCCC[N+](C)(C)CCN(Cc1ccc(OC)cc1)c1ncccn1.[Br-]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15942028985507245,
+        "morgan_similarity": 0.10638297872340426,
+        "combined_2d_score": 0.1382053654024052,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2798924,
+        "smiles": "Cc1cc(N)c2ccccc2[n+]1CCCCCCCCCC[n+]1c(C)cc(N)c2ccccc21.[Cl-].[Cl-]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11267605633802817,
+        "morgan_similarity": 0.17647058823529413,
+        "combined_2d_score": 0.13819386909693454,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 775770,
+        "smiles": "COc1cc(OC)c(C(=O)CCCN2CCCC2)c(OC)c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16455696202531644,
+        "morgan_similarity": 0.0975609756097561,
+        "combined_2d_score": 0.13775856745909232,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1269300,
+        "smiles": "CCC(=O)NCC[C@@H]1CCc2ccc3OCCc3c12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1744186046511628,
+        "morgan_similarity": 0.08163265306122448,
+        "combined_2d_score": 0.13730422401518746,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 525379,
+        "smiles": "CCCCCCCCc1ccc(CCC(N)(CO)CO)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12698412698412698,
+        "morgan_similarity": 0.15151515151515152,
+        "combined_2d_score": 0.1367965367965368,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 461996,
+        "smiles": "FC(F)(F)c1ccc(CNc2ccc(Cc3c[nH]c4ncc(Cl)cc34)cn2)cn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1509433962264151,
+        "morgan_similarity": 0.11320754716981132,
+        "combined_2d_score": 0.13584905660377358,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 992702,
+        "smiles": "Cc1nc(NC(=O)N2CCC[C@H]2C(N)=O)sc1-c1ccnc(c1)C(C)(C)C(F)(F)F",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.175,
+        "morgan_similarity": 0.07692307692307693,
+        "combined_2d_score": 0.13576923076923075,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 655759,
+        "smiles": "C[N+](C)(C)CCCCCCCCCC[N+](C)(C)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15151515151515152,
+        "morgan_similarity": 0.1111111111111111,
+        "combined_2d_score": 0.13535353535353536,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 35160,
+        "smiles": "CNC(NC#N)=NCCSCc1[nH]cnc1C |w:6.6|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15384615384615385,
+        "morgan_similarity": 0.10638297872340426,
+        "combined_2d_score": 0.13486088379705402,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 86093,
+        "smiles": "NS(=O)(=O)c1cc2c(NC(NS2(=O)=O)C2CC3CC2C=C3)cc1Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1592920353982301,
+        "morgan_similarity": 0.09803921568627451,
+        "combined_2d_score": 0.13479090751344786,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 183719,
+        "smiles": "NC(=O)N1CCC(CC(=O)N2CCC(CC2)[C@H]2c3ncc(Br)cc3CCc3cc(Cl)cc(Br)c23)CC1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14814814814814814,
+        "morgan_similarity": 0.11475409836065574,
+        "combined_2d_score": 0.13479052823315119,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 50575,
+        "smiles": "C[N+](C)(C)CCOC(=O)CCC(=O)OCC[N+](C)(C)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1724137931034483,
+        "morgan_similarity": 0.07692307692307693,
+        "combined_2d_score": 0.13421750663129972,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3577824,
+        "smiles": "NC1(C(=O)N[C@@H](CCO)c2ccc(Cl)cc2)CCN(c2nc[nH]c3nccc2-3)CC1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14678899082568808,
+        "morgan_similarity": 0.11475409836065574,
+        "combined_2d_score": 0.13397503383967516,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3757117,
+        "smiles": "CNC(=C[N+](=O)[O-])NCCSCc1csc(CN(C)C)n1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16,
+        "morgan_similarity": 0.09433962264150944,
+        "combined_2d_score": 0.1337358490566038,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 385428,
+        "smiles": "CCCSc1ccc2nc(NC(=O)OC)[nH]c2c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14942528735632185,
+        "morgan_similarity": 0.10869565217391304,
+        "combined_2d_score": 0.1331334332833583,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 591506,
+        "smiles": "CCC\\N=C1/S\\C(=C/c2ccc(OC[C@H](O)CO)c(Cl)c2)C(=O)N1c1ccccc1C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16216216216216217,
+        "morgan_similarity": 0.08955223880597014,
+        "combined_2d_score": 0.13311819281968537,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 908198,
+        "smiles": "CC\\C(=C(\\CC)c1ccc(O)cc1)c1ccc(O)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.10588235294117647,
+        "morgan_similarity": 0.17391304347826086,
+        "combined_2d_score": 0.13309462915601022,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2747100,
+        "smiles": "C[N+](C)(C)CCCCCCCCCC[N+](C)(C)C.[Br-].[Br-]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15151515151515152,
+        "morgan_similarity": 0.10526315789473684,
+        "combined_2d_score": 0.13301435406698564,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1266450,
+        "smiles": "COc1cc(CNC(=O)CCCC\\C=C\\C(C)C)ccc1O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16831683168316833,
+        "morgan_similarity": 0.08,
+        "combined_2d_score": 0.132990099009901,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1266451,
+        "smiles": "CC(C)/C=C/CCCCC(=O)NCc1ccc(c(c1)OC)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16831683168316833,
+        "morgan_similarity": 0.08,
+        "combined_2d_score": 0.132990099009901,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 531901,
+        "smiles": "CCOC(=O)C(C)(C)Oc1ccc(Cl)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1,
+        "morgan_similarity": 0.18181818181818182,
+        "combined_2d_score": 0.13272727272727275,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 888583,
+        "smiles": "COc1c2occc2cc2ccc(=O)oc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16666666666666666,
+        "morgan_similarity": 0.08108108108108109,
+        "combined_2d_score": 0.1324324324324324,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1216505,
+        "smiles": "Cc1cn([C@@H]2O[C@H](CO)C=C2)c(=O)[nH]c1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15384615384615385,
+        "morgan_similarity": 0.1,
+        "combined_2d_score": 0.13230769230769232,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 632889,
+        "smiles": "C[C@H](O)[C@H](C)[C@@H]1O[C@H]1C[C@H]1CO[C@@H](C\\C(C)=C\\C(=O)OCCCCCCCCC(O)=O)[C@H](O)[C@@H]1O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2,
+        "morgan_similarity": 0.03076923076923077,
+        "combined_2d_score": 0.1323076923076923,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 948166,
+        "smiles": "Cc1ccc(cc1)-c1cc(nn1-c1ccc(cc1)S(N)(=O)=O)C(F)(F)F",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14473684210526316,
+        "morgan_similarity": 0.11363636363636363,
+        "combined_2d_score": 0.13229665071770336,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 925454,
+        "smiles": "CN1CCN2C(C1)c1ccccc1Cc1cccnc21",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15789473684210525,
+        "morgan_similarity": 0.09302325581395349,
+        "combined_2d_score": 0.13194614443084454,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 958854,
+        "smiles": "Nc1ccc(cc1)S(=O)(=O)Nc1ncccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.08620689655172414,
+        "morgan_similarity": 0.2,
+        "combined_2d_score": 0.1317241379310345,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1320282,
+        "smiles": "CC(C)C(=O)c1c(nn2ccccc12)C(C)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14893617021276595,
+        "morgan_similarity": 0.10526315789473684,
+        "combined_2d_score": 0.1314669652855543,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 224813,
+        "smiles": "CCCN[C@H]1CCc2nc(N)sc2C1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11363636363636363,
+        "morgan_similarity": 0.15789473684210525,
+        "combined_2d_score": 0.13133971291866028,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 699200,
+        "smiles": "CCN(CC)CC(=O)Nc1c(C)cccc1C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14,
+        "morgan_similarity": 0.11764705882352941,
+        "combined_2d_score": 0.13105882352941178,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 306808,
+        "smiles": "CCCCC[C@H](O)\\C=C\\[C@H]1[C@H](O)CC(=O)[C@@H]1CCCCCCC(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1797752808988764,
+        "morgan_similarity": 0.057692307692307696,
+        "combined_2d_score": 0.13094209161624892,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 705913,
+        "smiles": "CSc1[nH]c2cc(c(cc2n1)Cl)Oc3cccc(c3Cl)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12280701754385964,
+        "morgan_similarity": 0.14285714285714285,
+        "combined_2d_score": 0.13082706766917293,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1107384,
+        "smiles": "C[C@]12CC[C@H]3[C@@H](CCc4cc(O)ccc34)[C@@H]1CC[C@@H]2O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15730337078651685,
+        "morgan_similarity": 0.09090909090909091,
+        "combined_2d_score": 0.13074565883554648,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1107388,
+        "smiles": "C[C@]12CC[C@H]3[C@@H](CCc4cc(O)ccc34)[C@@H]1CC[C@@H]2O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15730337078651685,
+        "morgan_similarity": 0.09090909090909091,
+        "combined_2d_score": 0.13074565883554648,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1260518,
+        "smiles": "Clc1ccc(cc1)C(=O)NCCN1CCOCC1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1320754716981132,
+        "morgan_similarity": 0.1282051282051282,
+        "combined_2d_score": 0.1305273343009192,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 802082,
+        "smiles": "NC(CCC(O)=O)C=C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16923076923076924,
+        "morgan_similarity": 0.07142857142857142,
+        "combined_2d_score": 0.1301098901098901,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 230131,
+        "smiles": "c1cc(ccc1N)S(=O)(=O)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.09523809523809523,
+        "morgan_similarity": 0.18181818181818182,
+        "combined_2d_score": 0.12987012987012986,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1198094,
+        "smiles": "CCCCC[C@H](O)\\C=C\\[C@H]1[C@H](O)CC(=O)[C@@H]1C\\C=C/CCCC(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1797752808988764,
+        "morgan_similarity": 0.05454545454545454,
+        "combined_2d_score": 0.12968335035750767,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1198096,
+        "smiles": "CCCCC[C@H](O)\\C=C\\[C@H]1[C@H](O)CC(=O)[C@@H]1C\\C=C/CCCC(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1797752808988764,
+        "morgan_similarity": 0.05454545454545454,
+        "combined_2d_score": 0.12968335035750767,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 855662,
+        "smiles": "CC(=O)O[C@H]1Cc2ccccc2N(C(N)=O)c2ccccc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15384615384615385,
+        "morgan_similarity": 0.09302325581395349,
+        "combined_2d_score": 0.1295169946332737,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 234702,
+        "smiles": "c1ccc2c(c1)C=Cc3ccccc3N2C(=O)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14634146341463414,
+        "morgan_similarity": 0.10344827586206896,
+        "combined_2d_score": 0.12918418839360807,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 938219,
+        "smiles": "C#CCN[C@@H]1CCc2ccccc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1388888888888889,
+        "morgan_similarity": 0.11428571428571428,
+        "combined_2d_score": 0.12904761904761905,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 938220,
+        "smiles": "C#CCN[C@@H]1CCc2c1cccc2",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1388888888888889,
+        "morgan_similarity": 0.11428571428571428,
+        "combined_2d_score": 0.12904761904761905,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 7059,
+        "smiles": "C[C@]12CC[C@H]3[C@@H](CCc4cc(OC(=O)N(CCCl)CCCl)ccc34)[C@@H]1CC[C@@H]2OP(O)(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16379310344827586,
+        "morgan_similarity": 0.07692307692307693,
+        "combined_2d_score": 0.12904509283819626,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4842063,
+        "smiles": "CC(N)Cc1ccccc1.O=S(=O)(O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1,
+        "morgan_similarity": 0.1724137931034483,
+        "combined_2d_score": 0.12896551724137933,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1002411,
+        "smiles": "CCN(CC)CCOc1ccc(cc1)C(O)(Cc1ccc(Cl)cc1)c1ccc(C)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12698412698412698,
+        "morgan_similarity": 0.13043478260869565,
+        "combined_2d_score": 0.12836438923395443,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 979223,
+        "smiles": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1206896551724138,
+        "morgan_similarity": 0.1388888888888889,
+        "combined_2d_score": 0.12796934865900383,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 170062,
+        "smiles": "CC(C)(C)NC(=O)[C@H]1CC[C@H]2[C@@H]3CC[C@H]4NC(=O)C=C[C@]4(C)[C@H]3CC[C@]12C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17721518987341772,
+        "morgan_similarity": 0.05357142857142857,
+        "combined_2d_score": 0.12775768535262205,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1350505,
+        "smiles": "Cc1cc(n(c1C(=O)c2ccc(cc2)Cl)C)CC(=O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11023622047244094,
+        "morgan_similarity": 0.15384615384615385,
+        "combined_2d_score": 0.1276801938219261,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 775163,
+        "smiles": "CN1CCC(CC1)OC(c1ccccc1)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15384615384615385,
+        "morgan_similarity": 0.08823529411764706,
+        "combined_2d_score": 0.12760180995475115,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 740730,
+        "smiles": "C(CC(O)(P(=O)(O)O)P(=O)(O)O)CN",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16279069767441862,
+        "morgan_similarity": 0.07407407407407407,
+        "combined_2d_score": 0.1273040482342808,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 805988,
+        "smiles": "CCCCc1c(O)n(-c2ccccc2)n(-c2ccccc2)c1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14,
+        "morgan_similarity": 0.10810810810810811,
+        "combined_2d_score": 0.12724324324324326,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 750057,
+        "smiles": "CC(C)c1cccc(C(C)C)c1O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.125,
+        "morgan_similarity": 0.13043478260869565,
+        "combined_2d_score": 0.12717391304347825,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 788299,
+        "smiles": "Cc1cc(=[NH2+])c2ccccc2n1CCCCCCCCCCn1c(C)cc(=[NH2+])c2ccccc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13559322033898305,
+        "morgan_similarity": 0.11428571428571428,
+        "combined_2d_score": 0.12707021791767553,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 634606,
+        "smiles": "CC(C)(C)c1ccc(cc1)C(=O)CCCN1CCC(CC1)OC(c1ccccc1)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16161616161616163,
+        "morgan_similarity": 0.07407407407407407,
+        "combined_2d_score": 0.1265993265993266,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1328212,
+        "smiles": "COc1ccc(cc1C(=O)NCCc2ccc(cc2)S(=O)(=O)NC(=O)NC3CCCCC3)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1452991452991453,
+        "morgan_similarity": 0.09836065573770492,
+        "combined_2d_score": 0.12652374947456915,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 952340,
+        "smiles": "Cc1ccc(c(c1Cl)Nc2ccccc2C(=O)O)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12307692307692308,
+        "morgan_similarity": 0.13157894736842105,
+        "combined_2d_score": 0.12647773279352226,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 664969,
+        "smiles": "CCCCOc1ccc(cc1)CC(=O)NO",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13414634146341464,
+        "morgan_similarity": 0.11428571428571428,
+        "combined_2d_score": 0.1262020905923345,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 810238,
+        "smiles": "Cc1nc2C(O)CCCn2c(=O)c1CCN1CCC(CC1)c1noc2cc(F)ccc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16,
+        "morgan_similarity": 0.07462686567164178,
+        "combined_2d_score": 0.12585074626865672,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 963045,
+        "smiles": "N[C@@H](Cc1ccc(cc1)N(CCCl)CCCl)C(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11702127659574468,
+        "morgan_similarity": 0.1388888888888889,
+        "combined_2d_score": 0.12576832151300238,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2799155,
+        "smiles": "COCCCOc1ccnc(C[S+]([O-])c2nc3ccccc3[nH]2)c1C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14563106796116504,
+        "morgan_similarity": 0.09433962264150944,
+        "combined_2d_score": 0.1251144898333028,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1117350,
+        "smiles": "C[C@@]12CCCCC[C@@H](Cc3ccc(O)cc13)[C@@H]2N |r|",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14473684210526316,
+        "morgan_similarity": 0.09523809523809523,
+        "combined_2d_score": 0.124937343358396,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1117351,
+        "smiles": "C[C@@]12CCCCC[C@@H](Cc3ccc(O)cc13)[C@@H]2N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14473684210526316,
+        "morgan_similarity": 0.09523809523809523,
+        "combined_2d_score": 0.124937343358396,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 972164,
+        "smiles": "CC(=O)NS(=O)(=O)c1ccc(N)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.09302325581395349,
+        "morgan_similarity": 0.1724137931034483,
+        "combined_2d_score": 0.12477947072975142,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 767536,
+        "smiles": "Clc1ccc2N=C3NC(=O)CN3Cc2c1Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12,
+        "morgan_similarity": 0.13157894736842105,
+        "combined_2d_score": 0.12463157894736841,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 2726319,
+        "smiles": "COC(=O)[C@H](c1ccccc1Cl)N1CCc2sccc2C1.O=S(=O)(O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14432989690721648,
+        "morgan_similarity": 0.09433962264150944,
+        "combined_2d_score": 0.12433378720093366,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 647065,
+        "smiles": "CCCCC[N@](C)CCC(O)(P(=O)(O)O)P(=O)(O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16883116883116883,
+        "morgan_similarity": 0.05714285714285714,
+        "combined_2d_score": 0.12415584415584414,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1338875,
+        "smiles": "C[C@@H](O)[C@@H]1[C@H]2CC(SCCN=CN)=C(N2C1=O)C(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1414141414141414,
+        "morgan_similarity": 0.09803921568627451,
+        "combined_2d_score": 0.12406417112299464,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 5534663,
+        "smiles": "CC[C@H](C)C(=O)O[C@H]1C[C@H](O)C=C2C=C[C@H](C)[C@H](CC[C@@H](O)C[C@@H](O)CC(=O)[O-])[C@H]21.[Na+]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15454545454545454,
+        "morgan_similarity": 0.078125,
+        "combined_2d_score": 0.12397727272727273,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 873432,
+        "smiles": "[H]/N=C\\1/CCCN1CC2=C(C(=O)NC(=O)N2)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14285714285714285,
+        "morgan_similarity": 0.09523809523809523,
+        "combined_2d_score": 0.1238095238095238,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3100532,
+        "smiles": "Cc1ccc(Cl)c(Nc2ccccc2C(=O)[O-])c1Cl.O.[Na+]",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.125,
+        "morgan_similarity": 0.12195121951219512,
+        "combined_2d_score": 0.12378048780487805,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 832626,
+        "smiles": "CCCCC[C@H](O)\\C=C\\[C@H]1[C@H](O)C[C@H](O)[C@@H]1C\\C=C/CCCC(O)=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.18085106382978725,
+        "morgan_similarity": 0.03773584905660377,
+        "combined_2d_score": 0.12360497792051385,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 156261,
+        "smiles": "CCN(CC)CCOC(=O)C1(CCCCC1)C1CCCCC1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17391304347826086,
+        "morgan_similarity": 0.047619047619047616,
+        "combined_2d_score": 0.12339544513457557,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1148279,
+        "smiles": "NC1=NCC2N1c1ccccc1Cc1ccccc21",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11538461538461539,
+        "morgan_similarity": 0.13513513513513514,
+        "combined_2d_score": 0.12328482328482329,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3345188,
+        "smiles": "NC(=O)C1CCN(CCCN2c3ccccc3Sc3ccc(Cl)cc32)CC1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1282051282051282,
+        "morgan_similarity": 0.11538461538461539,
+        "combined_2d_score": 0.12307692307692307,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1278462,
+        "smiles": "CN[C@]1(CCCCC1=O)c2ccccc2Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1111111111111111,
+        "morgan_similarity": 0.1388888888888889,
+        "combined_2d_score": 0.12222222222222223,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4428261,
+        "smiles": "COc1cc(NC(C)CCCN)c2ncccc2c1.O=P(O)(O)O.O=P(O)(O)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12658227848101267,
+        "morgan_similarity": 0.11538461538461539,
+        "combined_2d_score": 0.12210321324245375,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 445003,
+        "smiles": "CCc1ccc(CCOc2ccc(Cc3sc(=O)[nH]c3O)cc2)nc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13761467889908258,
+        "morgan_similarity": 0.09803921568627451,
+        "combined_2d_score": 0.12178449361395935,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 411242,
+        "smiles": "CN(C)CCC(c1ccccc1)c1ccccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1044776119402985,
+        "morgan_similarity": 0.14705882352941177,
+        "combined_2d_score": 0.1215100965759438,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 24942,
+        "smiles": "CCCCCCCN(CC)CCCC(O)c1ccc(NS(C)(=O)=O)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14414414414414414,
+        "morgan_similarity": 0.08695652173913043,
+        "combined_2d_score": 0.12126909518213866,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 247261,
+        "smiles": "CN(CCOc1ccc(Cc2sc(=O)[nH]c2O)cc1)c1ccccn1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13978494623655913,
+        "morgan_similarity": 0.09259259259259259,
+        "combined_2d_score": 0.12090800477897251,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1230028,
+        "smiles": "C[C@H]1CNCCc2ccc(Cl)cc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1,
+        "morgan_similarity": 0.15151515151515152,
+        "combined_2d_score": 0.1206060606060606,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3517238,
+        "smiles": "CCOc1ncc(C)c2c1[C@H](c1ccc(C#N)cc1OC)C(C(N)=O)=C(C)N2",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13432835820895522,
+        "morgan_similarity": 0.1,
+        "combined_2d_score": 0.12059701492537314,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 107352,
+        "smiles": "c1cc(c(cc1Cl)Cl)CO[C@@H](Cn2ccnc2)c3ccc(cc3Cl)Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11206896551724138,
+        "morgan_similarity": 0.13333333333333333,
+        "combined_2d_score": 0.12057471264367817,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 3460853,
+        "smiles": "C[C@]12Cc3c[nH]nc3C[C@@H]1CC[C@@H]1[C@@H]2CC[C@@]2(C)[C@H]1CC[C@]2(C)O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14736842105263157,
+        "morgan_similarity": 0.08,
+        "combined_2d_score": 0.12042105263157894,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 89324,
+        "smiles": "CS(=O)(=O)c1ccc(C(=O)Nc2ccc(Cl)c(c2)-c2ccccn2)c(Cl)c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12213740458015267,
+        "morgan_similarity": 0.11764705882352941,
+        "combined_2d_score": 0.12034126627750336,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1332442,
+        "smiles": "COCCCN1CCC(CC1)NC(=O)c1cc(Cl)c(N)c2CCOc12",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.10526315789473684,
+        "morgan_similarity": 0.14285714285714285,
+        "combined_2d_score": 0.12030075187969924,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 471734,
+        "smiles": "Cc1cc(no1)NS(=O)(=O)c2ccc(cc2)N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.08620689655172414,
+        "morgan_similarity": 0.17142857142857143,
+        "combined_2d_score": 0.12029556650246306,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 895676,
+        "smiles": "CC1=C(C(=O)N2CCCCC2=N1)CCN3CCC(CC3)c4c5ccc(cc5on4)F",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14893617021276595,
+        "morgan_similarity": 0.07692307692307693,
+        "combined_2d_score": 0.12013093289689034,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 834861,
+        "smiles": "Cc1cc(cc(c1Oc2c(c(nc(n2)Nc3ccc(cc3)C#N)N)Br)C)C#N",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11510791366906475,
+        "morgan_similarity": 0.1276595744680851,
+        "combined_2d_score": 0.12012857798867288,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 276099,
+        "smiles": "CC(C)(Sc1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C)Sc1cc(c(O)c(c1)C(C)(C)C)C(C)(C)C",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12612612612612611,
+        "morgan_similarity": 0.1111111111111111,
+        "combined_2d_score": 0.1201201201201201,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 219128,
+        "smiles": "N[C@@H]1CON=C1O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12,
+        "morgan_similarity": 0.12,
+        "combined_2d_score": 0.12,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 375668,
+        "smiles": "COC(=O)c1cn2[C@@H](C)COc3c(N4CCN(C)CC4)c(F)cc(c23)c1=O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.16666666666666666,
+        "morgan_similarity": 0.05,
+        "combined_2d_score": 0.12,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 1233190,
+        "smiles": "CCN1CCN(CC1)c1cc(-c2ccc(F)cc2)c2CCCCCCc2n1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12987012987012986,
+        "morgan_similarity": 0.10416666666666667,
+        "combined_2d_score": 0.11958874458874458,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 692091,
+        "smiles": "CC\\C(=C(/c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13253012048192772,
+        "morgan_similarity": 0.1,
+        "combined_2d_score": 0.11951807228915663,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 692093,
+        "smiles": "CC/C(=C(\\c1ccccc1)/c2ccc(cc2)OCCN(C)C)/c3ccccc3",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13253012048192772,
+        "morgan_similarity": 0.1,
+        "combined_2d_score": 0.11951807228915663,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 26784,
+        "smiles": "CNS(=O)(=O)CCc1ccc2[nH]cc(C3CCN(C)CC3)c2c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14782608695652175,
+        "morgan_similarity": 0.07692307692307693,
+        "combined_2d_score": 0.11946488294314382,
+        "pharm3d_score": 0.25
+      },
+      {
+        "ligand_id": 4352074,
+        "smiles": "Cl.Clc1ccc(CCCOCCCN2CCCCC2)cc1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.2962962962962963,
+        "morgan_similarity": 0.13157894736842105,
+        "combined_2d_score": 0.23040935672514617,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 2785264,
+        "smiles": "Cc1cccc(C)c1OCC(C)N.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.17647058823529413,
+        "morgan_similarity": 0.1724137931034483,
+        "combined_2d_score": 0.1748478701825558,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 3184701,
+        "smiles": "Cl.Nc1c2c(nc3ccccc13)CCCC2",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15384615384615385,
+        "morgan_similarity": 0.1875,
+        "combined_2d_score": 0.16730769230769232,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 3472037,
+        "smiles": "Cc1cccc([C@H](C)c2c[nH]cn2)c1C.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.203125,
+        "morgan_similarity": 0.1111111111111111,
+        "combined_2d_score": 0.16631944444444444,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 2785430,
+        "smiles": "CN1CCCC(n2nc(Cc3ccc(Cl)cc3)c3ccccc3c2=O)CC1.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1509433962264151,
+        "morgan_similarity": 0.13725490196078433,
+        "combined_2d_score": 0.1454679985201628,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 2788500,
+        "smiles": "CC1(C)CC(=O)N(CCCCN2CCN(c3ncccn3)CC2)C(=O)C1.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1568627450980392,
+        "morgan_similarity": 0.11627906976744186,
+        "combined_2d_score": 0.14062927496580027,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 3473144,
+        "smiles": "COc1ccc(CCO[C@@H]2CCCC[C@H]2N2CC[C@@H](O)C2)cc1OC.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.15625,
+        "morgan_similarity": 0.09803921568627451,
+        "combined_2d_score": 0.1329656862745098,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 3094732,
+        "smiles": "Cl.NCCc1ccc(O)c(O)c1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11904761904761904,
+        "morgan_similarity": 0.14814814814814814,
+        "combined_2d_score": 0.1306878306878307,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 3756771,
+        "smiles": "CCCN[C@H]1CCc2nc(N)sc2C1.Cl.Cl.O",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.11363636363636363,
+        "morgan_similarity": 0.15,
+        "combined_2d_score": 0.12818181818181817,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 3192156,
+        "smiles": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.1206896551724138,
+        "morgan_similarity": 0.13513513513513514,
+        "combined_2d_score": 0.12646784715750234,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 5531084,
+        "smiles": "Cl.N=C1CCCN1Cc1[nH]c(=O)[nH]c(=O)c1Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14285714285714285,
+        "morgan_similarity": 0.1,
+        "combined_2d_score": 0.12571428571428572,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 2785383,
+        "smiles": "Cl.O=C1CN2Cc3c(ccc(Cl)c3Cl)N=C2N1",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.12,
+        "morgan_similarity": 0.1282051282051282,
+        "combined_2d_score": 0.12328205128205127,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 2785097,
+        "smiles": "CCCCN1CCCCC1C(=O)Nc1c(C)cccc1C.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14864864864864866,
+        "morgan_similarity": 0.0851063829787234,
+        "combined_2d_score": 0.12323174238067855,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 2785374,
+        "smiles": "CCCCN1CCCC[C@H]1C(=O)Nc1c(C)cccc1C.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.14864864864864866,
+        "morgan_similarity": 0.0851063829787234,
+        "combined_2d_score": 0.12323174238067855,
+        "pharm3d_score": null
+      },
+      {
+        "ligand_id": 3184806,
+        "smiles": "COc1cc2c(cc1OC)C(=O)C(CC1CCN(Cc3ccccc3)CC1)C2.Cl",
+        "training_affinity_type": null,
+        "training_affinity_value": null,
+        "pharm2d_similarity": 0.13592233009708737,
+        "morgan_similarity": 0.09615384615384616,
+        "combined_2d_score": 0.12001493651979088,
+        "pharm3d_score": null
+      }
+    ]
+  }
+]

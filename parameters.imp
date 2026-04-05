@@ -1,0 +1,7 @@
+# Disable ALL statistical filtering
+Z_SCORE -1.0
+Z_SCORE_CONS -1.0
+Z_SCORE_FP -1.0
+
+# Disable surface normal constraints
+SURF_VECTOR_ANGLE 4.0
