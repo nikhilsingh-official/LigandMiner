@@ -1,7 +1,12 @@
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Optional, Tuple, Union
-from src.domain.common import StructureDB, MethodType
+from typing import TypeAlias
+
+from src.domain.common import MethodType, StructureDB
+
+
+ResidueRef: TypeAlias = tuple[str, int, str]
+
 
 @dataclass
 class Chain:
@@ -9,12 +14,13 @@ class Chain:
     start: int
     end: int
 
+
 @dataclass
 class Pocket:
     pocket_id: int
 
-    residues: List[Tuple[str, int, str]] = field(default_factory=list)
-    uniprot_indices: List[Tuple[str, int, str]] = field(default_factory=list)
+    residues: list[ResidueRef] = field(default_factory=list)
+    uniprot_indices: list[ResidueRef] = field(default_factory=list)
 
     score: float = 0.0
     druggability_score: float = 0.0
@@ -40,66 +46,94 @@ class Pocket:
     active_site_coverage: float = 0.0
     pocket_domain_purity: float = 0.0
 
+
+@dataclass
+class StructurePaths:
+    raw_structure_path: Path | None = None
+    structure_path: Path | None = None
+    fpocket_out: Path | None = None
+    fpocket_pockets: Path | None = None
+    fpocket_txt: Path | None = None
+    prank_out: Path | None = None
+    prank_csv: Path | None = None
+    probis_out: Path | None = None
+    probis_srf: Path | None = None
+    probis_compare: Path | None = None
+    probis_nosql: Path | None = None
+    probis_results: Path | None = None
+
+
+@dataclass
+class StructureAnalysis:
+    sifts_mapping: dict | None = None
+    true_pocket: list[ResidueRef] | None = None
+    true_pocket_certainty: float | None = None
+    structural_plausibility: float = 0.0
+    fpockets: list[Pocket] = field(default_factory=list)
+    domain_coverage: float = 0.0
+    active_site_coverage: float = 0.0
+
+
+@dataclass
+class StructureMetadata:
+    pass
+
+
+@dataclass
+class ExperimentalStructureMetadata(StructureMetadata):
+    method: MethodType | None = None
+    resolution: float | None = None
+
+
+@dataclass
+class AlphaFoldStructureMetadata(StructureMetadata):
+    confidence_type: str | None = None
+    avg_local_score: float | None = None
+    provider: str | None = None
+    created_date: str | None = None
+    coverage: float | None = None
+
+
+@dataclass
+class HomologyStructureMetadata(StructureMetadata):
+    coverage: float | None = None
+    gmqe: float | None = None
+    identity: float | None = None
+    similarity: float | None = None
+    avg_local_score: float | None = None
+    qmean6_z: float | None = None
+    provider: str | None = None
+    template: str | None = None
+    created_date: str | None = None
+
+
 @dataclass
 class BaseStructure:
     struct_id: str
     database: StructureDB
-    chains: list[Chain]
+    chains: list[Chain] = field(default_factory=list)
+    cif: str | None = None
+    paths: StructurePaths = field(default_factory=StructurePaths)
+    analysis: StructureAnalysis = field(default_factory=StructureAnalysis)
 
-    cif: Optional[str] = None
-    raw_structure_path: Optional[Path] = None
-    structure_path: Optional[Path] = None
-    fpocket_out: Optional[Path] = None
-    fpocket_pockets: Optional[Path] = None
-    fpocket_txt: Optional[Path] = None
-    prank_out: Optional[Path] = None
-    prank_csv: Optional[Path] = None
-    probis_out: Optional[Path] = None
-    probis_srf: Optional[Path] = None
-    probis_compare: Optional[Path] = None
-    probis_nosql: Optional[Path] = None
-    probis_results: Optional[Path] = None
-
-    true_pocket: Optional[list[(str, int, str)]] = None
-    true_pocket_certainty: Optional[float] = None
-
-    structural_plausibility: float = 0.0
-    fpockets: list[Pocket] = field(default_factory=list)
-
-    domain_coverage: float = 0.0
-    active_site_coverage:float = 0.0
 
 @dataclass
 class ExperimentalStructure(BaseStructure):
-    method: Optional[MethodType] = None
-    resolution: Optional[float] = None
-    sifts_mapping: Optional[dict] = None
+    metadata: ExperimentalStructureMetadata = field(default_factory=ExperimentalStructureMetadata)
+
 
 @dataclass
 class AlphaFoldStructure(BaseStructure):
-    confidence_type: Optional[str] = None
-    avg_local_score: Optional[float] = None
-    provider: Optional[str] = None
-    created_date: Optional[str] = None
-    coverage: Optional[float] = None
+    metadata: AlphaFoldStructureMetadata = field(default_factory=AlphaFoldStructureMetadata)
+
 
 @dataclass
 class HomologyStructure(BaseStructure):
-    coverage: Optional[float] = None
-    gmqe: Optional[float] = None
-    identity: Optional[float] = None
-    similarity: Optional[float] = None
+    metadata: HomologyStructureMetadata = field(default_factory=HomologyStructureMetadata)
 
-    avg_local_score: Optional[float] = None
-    qmean6_z: Optional[float] = None
+@dataclass
+class PropertyData:
+    metadata: ExperimentalStructureMetadata
+    chains: list[Chain]
 
-    provider: Optional[str] = None
-    template: Optional[str] = None
-    created_date: Optional[str] = None
-    method: Optional[str] = None
-
-Structure = Union[
-    ExperimentalStructure,
-    AlphaFoldStructure,
-    HomologyStructure
-]
+Structure: TypeAlias = ExperimentalStructure | AlphaFoldStructure | HomologyStructure

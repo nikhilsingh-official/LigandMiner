@@ -84,8 +84,12 @@ class Region:
     start: int
     end: int
 
+type InterProIDs = List[str]
+type Domains = List[Region]
+type ActiveSites = List[Region]
+
 @dataclass
 class SequenceAnnotations:
-    interpro_ids: List[str] = field(default_factory=list)
-    domains: List[Region] = field(default_factory=list)
-    active_sites: List[Region] = field(default_factory=list)
+    interpro_ids: InterProIDs = field(default_factory=list)
+    domains: Domains = field(default_factory=list)
+    active_sites: ActiveSites = field(default_factory=list)

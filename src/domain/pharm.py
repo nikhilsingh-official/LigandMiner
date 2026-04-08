@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Dict, Optional, Tuple, Set
+from typing import TYPE_CHECKING, List, Dict, Optional, Tuple, Set
 
 import numpy as np
 from rdkit.Chem.Pharm3D.Pharmacophore import Pharmacophore
@@ -8,9 +8,10 @@ from rdkit.Chem.rdMolChemicalFeatures import MolChemicalFeature
 from rdkit.DataStructs import SparseBitVect
 from rdkit.DataStructs.cDataStructs import ExplicitBitVect
 from rdkit.Geometry import Point3D
-from rich.progress import Progress
-
 from src.domain.ligand import Ligand
+
+if TYPE_CHECKING:
+    from src.app.progress import ProgressSink
 
 
 @dataclass(frozen=True)
@@ -27,7 +28,7 @@ class Pharm2DConfig:
 @dataclass(frozen=True)
 class Pharm3DConfig:
     # Configuration controlling 3D pharmacophore consensus generation.
-    progress: Progress
+    progress: "ProgressSink | None" = None
     num_conformers: int = 10        # Conformers generated per ligand
     energy_window: float = 5.0      # kcal/mol window for conformer filtering
     feature_consensus_ratio: float = 0.7 # fraction of training ligands required for a feature cluster to become a consensus pharmacophore feature

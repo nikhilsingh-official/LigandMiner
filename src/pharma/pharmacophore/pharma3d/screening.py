@@ -6,6 +6,7 @@ from typing import List
 import numpy as np
 from rdkit.Chem import rdMolChemicalFeatures
 from rdkit.Chem.Pharm3D import EmbedLib
+from src.app.progress import NullProgressSink
 from src.domain.ligand import Ligand, LigandConformers
 from src.domain.pharm import Pharm3DConfig, Pharm3DConsensus, PairwiseModel, Pharm3DResult, PairDiagnostics, Embedding
 from src.pharma.math.gaussian_nll import gaussian_nll_vectorized
@@ -270,7 +271,7 @@ class Pharm3DScreening:
     def __init__(self, config: Pharm3DConfig):
         self.config = config
         self.feat_factory = init_feature_factory()
-        self.progress = config.progress
+        self.progress = config.progress or NullProgressSink()
 
         self.matcher = PharmacophoreMatcher(self.feat_factory)
 
@@ -288,13 +289,11 @@ class Pharm3DScreening:
         self.screen_dataset: List[LigandConformers] | None = None
 
     def set_consensus(self, ligands: List[Ligand]):
-
-        task = None
-        if self.progress:
-            task = self.progress.add_task(
-                f"   ↳ Pharm3D: preparing {len(ligands)} training ligands",
-                total=len(ligands)
-            )
+        self.progress.start(
+            "prepare_training_ligands",
+            f"Pharm3D: preparing {len(ligands)} training ligands",
+            total=len(ligands),
+        )
 
         prepped_ligands = []
 
@@ -303,37 +302,28 @@ class Pharm3DScreening:
             if conf:
                 prepped_ligands.extend(conf)
 
-            if task:
-                self.progress.advance(task)
+            self.progress.advance("prepare_training_ligands")
 
-        if task:
-            self.progress.update(task, description="   ✔ Pharm3D training ligands ready")
+        self.progress.finish("prepare_training_ligands", "Pharm3D training ligands ready")
 
         if not prepped_ligands:
             print("[ERROR] No valid ligands provided for consensus building.")
             self.consensus = None
             return
 
-        if self.progress:
-            build_task = self.progress.add_task(
-                f"   ↳ Pharm3D: building consensus",
-                total=1
-            )
+        self.progress.start("build_consensus", "Pharm3D: building consensus", total=1)
 
         self.consensus = self.builder.run(prepped_ligands)
         print("Number of consensus features: ", len(self.consensus.features), " ")
-
-        if self.progress:
-            self.progress.advance(build_task)
+        self.progress.advance("build_consensus")
+        self.progress.finish("build_consensus", "Pharm3D consensus built")
 
     def set_screen_dataset(self, ligands: List[Ligand]):
-
-        task = None
-        if self.progress:
-            task = self.progress.add_task(
-                f"   ↳ Pharm3D: preparing screening ligands",
-                total=len(ligands)
-            )
+        self.progress.start(
+            "prepare_screening_ligands",
+            "Pharm3D: preparing screening ligands",
+            total=len(ligands),
+        )
 
         results = []
 
@@ -342,13 +332,10 @@ class Pharm3DScreening:
             if conf:
                 results.extend(conf)
 
-            if task:
-                self.progress.advance(task)
+            self.progress.advance("prepare_screening_ligands")
 
         self.screen_dataset = results
-
-        if task:
-            self.progress.update(task, description="   ✔ Pharm3D screening dataset ready")
+        self.progress.finish("prepare_screening_ligands", "Pharm3D screening dataset ready")
 
     def compare_one_to_many(
         self,
@@ -405,22 +392,19 @@ class Pharm3DScreening:
             print("No dataset - screening failed.")
             return None
 
-        task = None
-        if self.progress:
-            task = self.progress.add_task(
-                f"   ↳ Pharm3D: screening {len(self.screen_dataset)} ligands",
-                total=len(self.screen_dataset)
-            )
+        self.progress.start(
+            "screen_many_to_many",
+            f"Pharm3D: screening {len(self.screen_dataset)} ligands",
+            total=len(self.screen_dataset),
+        )
 
         results = []
 
         for lig in self.screen_dataset:
             results.append((lig, self._screen_prepared(lig)))
 
-            if task:
-                self.progress.advance(task)
+            self.progress.advance("screen_many_to_many")
 
-        if task:
-            self.progress.update(task, description="   ✔ Pharm3D screening complete")
+        self.progress.finish("screen_many_to_many", "Pharm3D screening complete")
 
         return results
