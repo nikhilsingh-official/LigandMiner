@@ -207,3 +207,77 @@
 - compare apo vs holo structure selection quality on benchmark targets
 - benchmark consensus-pocket selection against current domain-based selection
 - add explainable selection summaries to final outputs
+
+## ProBiS-style Binding Site Analysis
+
+### Goal
+- Use ProBiS to identify structurally similar binding sites and their known ligands.
+
+### Proposed workflow
+1. For each detected pocket in the target protein, use ProBiS to find structurally similar pockets in a database of known binding sites.
+2. Retrieve the ligands known to bind to these similar pockets.
+3. Rank these "transferred" ligands based on the similarity of the binding sites and other factors.
+4. Add these transferred ligands to the list of candidate ligands for virtual screening.
+
+### Integration
+- This stage would fit naturally after the "Binding Site Identification" and "Binding Site Analysis" stages in the intended high-level workflow.
+- It would extend the `SurfaceService` to handle these new ProBiS features.
+- The results would be a new source of ligands for the "Ligand Collection" stage.
+
+## Ligand Filtering
+
+### Goal
+- Implement a flexible ligand filtering pipeline to remove undesirable compounds before virtual screening.
+
+### Proposed filters
+- Drug-likeness (e.g., Lipinski's Rule of Five)
+- ADMET (Absorption, Distribution, Metabolism, Excretion, and Toxicity) properties
+- PAINS (Pan-Assay Interference Compounds)
+- User-defined filters
+
+### Integration
+- This would be a new stage in the pipeline, after "Ligand Collection" and before "Pharmacophore Modelling".
+- It would likely involve a new `FilteringService` and new domain models for representing filter criteria and results.
+
+## Molecular Dynamics
+
+### Goal
+- Add support for running molecular dynamics simulations to validate docking poses and estimate binding free energies.
+
+### Proposed workflow
+1. System preparation (e.g., using GROMACS or AMBER).
+2. Equilibration simulations.
+3. Production simulations.
+4. Trajectory analysis (RMSD, RMSF, hydrogen bonds).
+5. Binding free energy calculations (e.g., MM/PBSA).
+
+### Integration
+- This would be a major new component of the pipeline, likely implemented as a new `MDService`.
+- It would be one of the final stages, after "Docking".
+
+## Post-analysis
+
+### Goal
+- Provide a comprehensive analysis of the simulation results to help the user interpret the data.
+
+### Proposed analyses
+- RMSD and RMSF plots.
+- Hydrogen bond analysis.
+- MM/PBSA results.
+- Stability analysis.
+- Final ranking of candidates based on all available data.
+
+### Integration
+- This would be the final stage of the pipeline, producing the final interactive report.
+- It would likely involve a new `AnalysisService`.
+
+## Refactoring and Cleanup
+
+### Goal
+- Improve the long-term maintainability and usability of the codebase.
+
+### Tasks
+- **Refactor `StructureService`**: This class is currently very large and handles too many responsibilities. It should be broken down into smaller, more focused services (e.g., a `PocketService`, a `StructureDownloadService`, etc.).
+- **Configuration Management**: Externalize hardcoded paths and parameters into a configuration file (e.g., `config.yaml` or similar).
+- **Improve Logging**: The current logging is minimal. A more structured and informative logging setup would be beneficial for debugging.
+- **Add Unit Tests**: The test coverage is sparse. More unit tests are needed, especially for the critical service classes.

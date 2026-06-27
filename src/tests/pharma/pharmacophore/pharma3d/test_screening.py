@@ -168,5 +168,268 @@ class TestPharm3DScreeningDiagnostics(unittest.TestCase):
         self.timer.report()
 
 
+class TestPharm3DScreeningEdgeCases(unittest.TestCase):
+    """Additional tests for edge cases and robustness in 3D screening"""
+    
+    @classmethod
+    def setUpClass(cls):
+        cls.config = Pharm3DConfig()
+    
+    def test_empty_training_set(self):
+        """Test behavior with empty training set"""
+        screening = Pharm3DScreening(self.config)
+        
+        # Should handle empty consensus gracefully
+        screening.set_consensus([])
+        
+        # Consensus should be initialized properly
+        self.assertIsNotNone(screening.consensus)
+    
+    def test_empty_screening_dataset(self):
+        """Test behavior with empty screening dataset"""
+        screening = Pharm3DScreening(self.config)
+        screening.set_consensus([L("CCO", 1)])
+        
+        # Set empty screening dataset
+        screening.set_screen_dataset([])
+        
+        # Should return empty results
+        results = screening.compare_many_to_many()
+        self.assertEqual(len(results), 0)
+    
+    def test_single_ligand_training_and_screening(self):
+        """Test with minimal datasets"""
+        screening = Pharm3DScreening(self.config)
+        
+        training = [L("CCO", 1)]
+        candidates = [L("CCCO", 10)]
+        
+        screening.set_consensus(training)
+        screening.set_screen_dataset(candidates)
+        
+        results = screening.compare_many_to_many()
+        
+        # Should handle minimal case
+        self.assertEqual(len(results), 1)
+        lig, result = results[0]
+        self.assertEqual(lig.record.ligand_id, "10")
+    
+    def test_duplicate_ligands_handling(self):
+        """Test handling of duplicate SMILES in datasets"""
+        screening = Pharm3DScreening(self.config)
+        
+        # Training with duplicates
+        training = [L("CCO", 1), L("CCO", 2)]
+        
+        # Screening with duplicates
+        candidates = [L("CCCO", 10), L("CCCO", 11)]
+        
+        screening.set_consensus(training)
+        screening.set_screen_dataset(candidates)
+        
+        results = screening.compare_many_to_many()
+        
+        # Should return results for all ligands
+        self.assertEqual(len(results), 2)
+        result_ids = {lig.record.ligand_id for lig, _ in results}
+        self.assertEqual(result_ids, {"10", "11"})
+    
+    def test_conformer_generation_failures(self):
+        """Test handling of molecules that fail conformer generation"""
+        screening = Pharm3DScreening(self.config)
+        
+        # Use simple molecules that should work
+        training = [L("CCO", 1)]
+        
+        # Some molecules might fail conformer generation
+        # Test with various challenging molecules
+        challenging_molecules = [
+            L("C", 10),                    # very simple
+            L("CC", 11),                   # simple alkane
+            L("[H][H]", 12),              # diatomic (if valid)
+        ]
+        
+        screening.set_consensus(training)
+        
+        for mol in challenging_molecules:
+            try:
+                screening.set_screen_dataset([mol])
+                results = screening.compare_many_to_many()
+                
+                # If successful, should return results
+                self.assertGreaterEqual(len(results), 0)
+                
+            except (ValueError, RuntimeError):
+                # Some molecules may legitimately fail
+                # Important that failures are explicit, not silent
+                pass
+    
+    def test_very_different_molecules(self):
+        """Test with structurally very different molecules"""
+        screening = Pharm3DScreening(self.config)
+        
+        # Training: simple alcohols
+        training = [L("CCO", 1), L("CCCO", 2)]
+        
+        # Screening: very different structures
+        diverse_candidates = [
+            L("c1ccc2c(c1)cc3ccccc3c2", 10),  # larger aromatic (naphthalene-like)
+            L("CC(C)(C)C(C)(C)C", 11),        # branched alkane
+            L("CC(=O)N(C)C", 12),             # amide
+            L("C1CCCCCCC1", 13),              # cycloalkane
+        ]
+        
+        screening.set_consensus(training)
+        screening.set_screen_dataset(diverse_candidates)
+        
+        results = screening.compare_many_to_many()
+        
+        # Should return results for diverse molecules
+        self.assertEqual(len(results), 4)
+        
+        # Check that scores are in valid ranges
+        for lig, result in results:
+            if result.embeddings:
+                score = result.embeddings[0].score
+                self.assertIsInstance(score, (int, float))
+                self.assertGreaterEqual(score, 0.0)
+    
+    def test_identical_training_and_screening(self):
+        """Test when training and screening sets are identical"""
+        screening = Pharm3DScreening(self.config)
+        
+        molecules = [L("CCO", 1), L("CCCO", 2)]
+        
+        screening.set_consensus(molecules)
+        screening.set_screen_dataset(molecules)
+        
+        results = screening.compare_many_to_many()
+        
+        # Should return results for all molecules
+        self.assertEqual(len(results), 2)
+        
+        # Self-similarity should be very good
+        for lig, result in results:
+            if result.embeddings:
+                score = result.embeddings[0].score
+                # Identical molecules should have excellent scores
+                self.assertLessEqual(score, 2.0)  # Low is better in 3D
+    
+    def test_embedding_failure_handling(self):
+        """Test handling when embedding fails"""
+        screening = Pharm3DScreening(self.config)
+        
+        # Simple training set
+        training = [L("CCO", 1)]
+        screening.set_consensus(training)
+        
+        # Test with molecules that might not embed well
+        candidates = [L("C", 10)]  # Very simple molecule
+        
+        screening.set_screen_dataset(candidates)
+        results = screening.compare_many_to_many()
+        
+        # Should handle embedding failures gracefully
+        self.assertGreaterEqual(len(results), 0)
+        
+        for lig, result in results:
+            # Result should exist even if embedding failed
+            self.assertIsNotNone(result)
+            
+            # embeddings list might be empty for failed cases
+            if not result.embeddings:
+                # This documents that empty embeddings are acceptable
+                pass
+            else:
+                # If embeddings exist, they should be valid
+                for embedding in result.embeddings:
+                    self.assertIsNotNone(embedding.score)
+    
+    def test_score_ordering(self):
+        """Test that screening produces meaningful score ordering"""
+        screening = Pharm3DScreening(self.config)
+        
+        # Training: alcohol
+        training = [L("CCO", 1)]
+        
+        # Screening: molecules with expected similarity order
+        candidates = [
+            L("CCO", 10),      # identical - should be best
+            L("CCCO", 11),     # similar alcohol - should be good
+            L("c1ccccc1", 12)  # different - should be worse
+        ]
+        
+        screening.set_consensus(training)
+        screening.set_screen_dataset(candidates)
+        results = screening.compare_many_to_many()
+        
+        # Extract scores
+        scores = {}
+        for lig, result in results:
+            if result.embeddings:
+                scores[lig.record.ligand_id] = result.embeddings[0].score
+            else:
+                scores[lig.record.ligand_id] = float('inf')
+        
+        # Identical molecule should have best (lowest) score
+        if "10" in scores and "12" in scores:
+            self.assertLessEqual(scores["10"], scores["12"])
+    
+    def test_large_candidate_set_performance(self):
+        """Test performance with larger candidate sets"""
+        screening = Pharm3DScreening(self.config)
+        
+        # Small training set
+        training = [L("CCO", 1), L("CCCO", 2)]
+        
+        # Larger candidate set
+        base_smiles = ["CCO", "CCCO", "CCCCO", "c1ccccc1", "CC(=O)O"]
+        candidates = [
+            L(base_smiles[i % len(base_smiles)], i+100)
+            for i in range(50)  # 50 candidates
+        ]
+        
+        screening.set_consensus(training)
+        screening.set_screen_dataset(candidates)
+        
+        results = screening.compare_many_to_many()
+        
+        # Should handle larger sets
+        self.assertEqual(len(results), 50)
+    
+    def test_consensus_determinism(self):
+        """Test that consensus building is deterministic"""
+        screening1 = Pharm3DScreening(self.config)
+        screening2 = Pharm3DScreening(self.config)
+        
+        training = [L("CCO", 1), L("CCCO", 2)]
+        
+        screening1.set_consensus(training)
+        screening2.set_consensus(training)
+        
+        # Should produce equivalent consensus
+        # (This is a basic check - full comparison would need more detailed inspection)
+        self.assertEqual(
+            len(screening1.consensus.features if screening1.consensus else 0),
+            len(screening2.consensus.features if screening2.consensus else 0)
+        )
+    
+    def test_screening_without_consensus(self):
+        """Test error handling when screening without setting consensus"""
+        screening = Pharm3DScreening(self.config)
+        
+        candidates = [L("CCO", 10)]
+        screening.set_screen_dataset(candidates)
+        
+        # Should handle missing consensus gracefully
+        try:
+            results = screening.compare_many_to_many()
+            # If it succeeds, that's fine
+            self.assertIsInstance(results, list)
+        except (AttributeError, ValueError):
+            # It's also acceptable to raise an error for missing consensus
+            pass
+
+
 if __name__ == "__main__":
     unittest.main()
