@@ -1,3 +1,5 @@
+import logging
+from time import perf_counter
 from typing import List, Tuple
 
 from rdkit import Chem
@@ -10,8 +12,11 @@ from src.domain.pharm import ConsensusFeature, Pharm3DConsensus, FeatureLigandMa
 from src.pharma.pharmacophore.pharma3d.feature_clustering import build_feature_clusters
 from src.pharma.pharmacophore.pharma3d.ligand_features import ligands_to_pharmacophore
 
-def build_consensus(consensus_features: List[ConsensusFeature]):
 
+logger = logging.getLogger(__name__)
+
+def build_consensus(consensus_features: List[ConsensusFeature]):
+    started = perf_counter()
     pcophore_feats = []
 
     for f in consensus_features:
@@ -23,11 +28,24 @@ def build_consensus(consensus_features: List[ConsensusFeature]):
         p_feat.SetId(f.id)
         pcophore_feats.append(p_feat)
 
-    return Pharmacophore(pcophore_feats)
+    pharmacophore = Pharmacophore(pcophore_feats)
+    logger.debug(
+        "Built RDKit consensus feature container features=%d elapsed_ms=%.3f",
+        len(pcophore_feats),
+        (perf_counter() - started) * 1000,
+    )
+    return pharmacophore
 
 
 def filter_clusters(feature_clusters: List[Cluster], min_support: int):
-     return [c for c in feature_clusters if len(c.ligand_ids) >= min_support]
+     filtered = [c for c in feature_clusters if len(c.ligand_ids) >= min_support]
+     logger.debug(
+         "Filtered Pharm3D feature clusters input_clusters=%d retained_clusters=%d minimum_support=%d",
+         len(feature_clusters),
+         len(filtered),
+         min_support,
+     )
+     return filtered
 
 import math
 import numpy as np
@@ -38,7 +56,14 @@ def compute_pairwise_stats(
     min_support: int,
     min_std: float = 0.3
 ) -> PairwiseModel:
-
+    started = perf_counter()
+    logger.debug(
+        "Computing Pharm3D pairwise statistics clusters=%d ligands=%d minimum_support=%d minimum_std=%.6f",
+        len(clusters),
+        len(ligands),
+        min_support,
+        min_std,
+    )
     idx_a = []
     idx_b = []
     means = []
@@ -86,13 +111,31 @@ def compute_pairwise_stats(
             stds.append(std_d)
             model_stds.append(model_std)
 
-    return PairwiseModel(
+            if logger.isEnabledFor(logging.DEBUG):
+                logger.debug(
+                    "Generated Pharm3D pairwise constraint feature_a=%d feature_b=%d supporting_ligands=%d observations=%d mean=%.6f raw_std=%.6f model_std=%.6f",
+                    i,
+                    j,
+                    supporting_ligands,
+                    n,
+                    mean_d,
+                    std_d,
+                    model_std,
+                )
+
+    model = PairwiseModel(
         idx_a=np.array(idx_a, dtype=int),
         idx_b=np.array(idx_b, dtype=int),
         means=np.array(means, dtype=float),
         raw_stds=np.array(stds, dtype=float),
         model_stds=np.array(model_stds, dtype=float)
     )
+    logger.debug(
+        "Finished Pharm3D pairwise statistics constraints=%d elapsed_ms=%.3f",
+        len(model.means),
+        (perf_counter() - started) * 1000,
+    )
+    return model
 
 
 class FeatureClusterer:
@@ -100,7 +143,16 @@ class FeatureClusterer:
         self.proximity = proximity
 
     def run(self, ligands: List[LigandPharmacophore]) -> List[Cluster]:
-        return build_feature_clusters(ligands, self.proximity)
+        started = perf_counter()
+        clusters = build_feature_clusters(ligands, self.proximity)
+        logger.debug(
+            "FeatureClusterer produced clusters=%d ligands=%d proximity=%.6f elapsed_ms=%.3f",
+            len(clusters),
+            len(ligands),
+            self.proximity,
+            (perf_counter() - started) * 1000,
+        )
+        return clusters
 
 
 class PharmacophoreStatistics:
@@ -147,9 +199,21 @@ class PharmacophoreStatistics:
         FeatureLigandMap,
     ]:
 
+        started = perf_counter()
         n_training = len(ligands)
         min_feature_consensus_support = math.ceil(n_training * self.feature_consensus_ratio)
         min_pairwise_support = math.ceil(n_training * self.pair_distance_support_ratio)
+
+        logger.debug(
+            "Building Pharm3D statistics training_ligands=%d clusters=%d feature_consensus_ratio=%.6f feature_min_support=%d pair_support_ratio=%.6f pair_min_support=%d feature_radius_k=%.6f",
+            n_training,
+            len(clusters),
+            self.feature_consensus_ratio,
+            min_feature_consensus_support,
+            self.pair_distance_support_ratio,
+            min_pairwise_support,
+            self.feature_radius_k,
+        )
 
         clusters = filter_clusters(clusters, min_feature_consensus_support)
 
@@ -160,6 +224,12 @@ class PharmacophoreStatistics:
             n_training
         )
 
+        logger.debug(
+            "Built Pharm3D statistics consensus_features=%d pairwise_constraints=%d elapsed_ms=%.3f",
+            len(features),
+            len(pairwise_stats.means),
+            (perf_counter() - started) * 1000,
+        )
         return features, pairwise_stats, ligand_map
 
 
@@ -174,6 +244,7 @@ class RDKitPharmacophoreBuilder:
         model: PairwiseModel
     ) -> None:
 
+        started = perf_counter()
         n = len(pcophore.getFeatures())
 
         for i in range(n):
@@ -195,9 +266,26 @@ class RDKitPharmacophoreBuilder:
             pcophore.setLowerBound(int(i), int(j), float(lower))
             pcophore.setUpperBound(int(i), int(j), float(upper))
 
+        logger.debug(
+            "Applied Pharm3D pairwise bounds features=%d default_pairs=%d statistical_pairs=%d k=%.6f max_dist=%.6f elapsed_ms=%.3f",
+            n,
+            n * (n - 1) // 2,
+            len(model.means),
+            self.k,
+            self.max_dist,
+            (perf_counter() - started) * 1000,
+        )
+
     def build(self, features, pairwise_stats) -> Pharmacophore:
+        started = perf_counter()
         pcophore = build_consensus(features)
         self.enrich_pcophore_with_pairwise_stats(pcophore, pairwise_stats)
+        logger.debug(
+            "Built RDKit Pharm3D pharmacophore features=%d pairwise_constraints=%d elapsed_ms=%.3f",
+            len(features),
+            len(pairwise_stats.means),
+            (perf_counter() - started) * 1000,
+        )
         return pcophore
 
 
@@ -224,24 +312,36 @@ class ConsensusBuilder:
         self,
         ligands: List[LigandConformers]
     ) -> List[LigandConformers]:
+        started = perf_counter()
         if not ligands:
+            logger.warning("Cannot align an empty Pharm3D training set")
             return []
 
+        #Select ligand with conformer with loewst global energy
         reference = min(
             ligands,
             key=lambda lig: min(conf.energy for conf in lig.conformers)
         )
+        #Extract the ID of that low-energy conformer
         reference_conf_id = self._lowest_energy_conformer_id(reference)
+        logger.debug(
+            "Selected Pharm3D alignment reference ligand_id=%s conformer_id=%d",
+            reference.record.ligand_id,
+            reference_conf_id,
+        )
+        #Delete all other conformers
         reference_mol = self._keep_only_conformer(reference.mol, reference_conf_id)
 
         aligned = []
 
         for ligand in ligands:
+            #Keep lowest energy lowest conformer for each ligand
             conf_id = self._lowest_energy_conformer_id(ligand)
             aligned_mol = self._keep_only_conformer(ligand.mol, conf_id)
 
             if ligand is not reference:
                 try:
+                    #Along conformer to reference conformer
                     o3a = AllChem.GetO3A(
                         aligned_mol,
                         reference_mol,
@@ -249,8 +349,15 @@ class ConsensusBuilder:
                         refCid=reference_conf_id,
                     )
                     o3a.Align()
-                except Exception:
+                except Exception as exc:
                     # Fall back to the original coordinates if O3A cannot build an atom map.
+                    logger.warning(
+                        "Pharm3D alignment fallback ligand_id=%s reference_ligand_id=%s exception_type=%s explanation=%s",
+                        ligand.record.ligand_id,
+                        reference.record.ligand_id,
+                        type(exc).__name__,
+                        exc,
+                    )
                     pass
 
             aligned.append(
@@ -261,25 +368,60 @@ class ConsensusBuilder:
                 )
             )
 
+        logger.debug(
+            "Aligned Pharm3D training ligands input_ligands=%d aligned_ligands=%d elapsed_ms=%.3f",
+            len(ligands),
+            len(aligned),
+            (perf_counter() - started) * 1000,
+        )
         return aligned
 
     def run(self, ligands: List[LigandConformers]) -> Pharm3DConsensus:
+        started = perf_counter()
+        logger.info("Building Pharm3D consensus ligands=%d", len(ligands))
+        #Align ligands lowest-energy conformers to each other - this also deletes other conformers
+        alignment_started = perf_counter()
         aligned_ligands = self._align_training_ligands(ligands)
+        logger.debug("Pharm3D consensus alignment elapsed_ms=%.3f", (perf_counter() - alignment_started) * 1000)
+        #Convert ligands to LigandPharmacophore objects
+        extraction_started = perf_counter()
         pcophore_ligands = ligands_to_pharmacophore(aligned_ligands, self.feat_factory)
-        clusters = self.clusterer.run(pcophore_ligands)
+        logger.debug("Pharm3D feature extraction elapsed_ms=%.3f", (perf_counter() - extraction_started) * 1000)
 
+        clustering_started = perf_counter()
+        clusters = self.clusterer.run(pcophore_ligands)
+        logger.debug("Pharm3D consensus clustering clusters=%d elapsed_ms=%.3f", len(clusters), (perf_counter() - clustering_started) * 1000)
+
+        statistics_started = perf_counter()
         (
             features,
             pairwise_stats,
             ligand_map
         ) = self.stats.build(clusters, aligned_ligands)
+        logger.debug(
+            "Pharm3D consensus statistics features=%d pairwise_constraints=%d elapsed_ms=%.3f",
+            len(features),
+            len(pairwise_stats.means),
+            (perf_counter() - statistics_started) * 1000,
+        )
 
+        build_started = perf_counter()
         pharmacophore = self.rdkit.build(features, pairwise_stats)
+        logger.debug("Pharm3D RDKit pharmacophore build elapsed_ms=%.3f", (perf_counter() - build_started) * 1000)
 
-        return Pharm3DConsensus(
+        consensus = Pharm3DConsensus(
             features=features,
             pairwise_stats=pairwise_stats,
             feature_to_ligands=ligand_map,
             pharmacophore=pharmacophore,
             num_training_ligands=len(ligands),
         )
+        logger.info(
+            "Built Pharm3D consensus ligands=%d features=%d clusters=%d pairwise_constraints=%d elapsed_ms=%.3f",
+            len(ligands),
+            len(features),
+            len(clusters),
+            len(pairwise_stats.means),
+            (perf_counter() - started) * 1000,
+        )
+        return consensus

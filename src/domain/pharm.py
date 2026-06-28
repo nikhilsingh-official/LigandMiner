@@ -23,6 +23,7 @@ class Pharm2DConfig:
     pharm2d_min_features: int = 2   # Minimum feature count per Pharm2D pattern
     pharm2d_max_features: int = 3   # Maximum feature count per Pharm2D pattern
     pharm2d_bin_step: float = 1.0           # Bin width for discretizing inter-feature distances in Pharm2D fingerprint
+    consensus_threshold: float = 0.8         #Threshold ratio for consensus fingerprint generation (0 < threshold <= 1)
     db_path: str = "/home/nikhils/Programming/LigandMiner/resources/pharm2d_cache.db"
 
 @dataclass(frozen=True)

@@ -309,6 +309,7 @@ class ScreeningService:
         )
 
         pharm2d = Pharm2DScreening(Pharm2DConfig())
+        pharm2d.close()
         pharm3d = Pharm3DScreening(
             Pharm3DConfig(
                 feature_consensus_ratio=0.4,

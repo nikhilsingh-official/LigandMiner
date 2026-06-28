@@ -62,19 +62,10 @@ def run_pharm3d_tests():
     print("=" * 60)
     
     loader = unittest.TestLoader()
-    suite = unittest.TestSuite()
-    
-    try:
-        # Original screening tests that work
-        suite.addTest(loader.loadTestsFromName(
-            'src.tests.pharma.pharmacophore.pharma3d.test_screening.TestPharm3DScreeningDiagnostics'
-        ))
-        
-        # Keep existing tests that we know are valuable
-        
-    except ImportError as e:
-        print(f"Warning: Could not load Pharm3D tests: {e}")
-        return False
+    suite = loader.discover(
+        start_dir=str(PROJECT_ROOT / "src/tests/pharma/pharmacophore/pharma3d"),
+        pattern="test_*.py",
+    )
     
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)

@@ -1,3 +1,5 @@
+import logging
+from time import perf_counter
 from typing import List
 
 from rdkit.Chem.rdChemicalFeatures import FreeChemicalFeature
@@ -7,8 +9,18 @@ from src.domain.ligand import LigandPharmacophore
 from src.domain.pharm import ClusterFeature, Cluster
 
 
-def build_feature_clusters(ligands: List[LigandPharmacophore], proximity: float) -> List[Cluster]:
+logger = logging.getLogger(__name__)
 
+
+def build_feature_clusters(ligands: List[LigandPharmacophore], proximity: float) -> List[Cluster]:
+    started = perf_counter()
+    if logger.isEnabledFor(logging.DEBUG):
+        logger.debug(
+            "Starting Pharm3D feature clustering ligands=%d input_features=%d proximity=%.6f",
+            len(ligands),
+            sum(len(ligand.pharmacophore.getFeatures()) for ligand in ligands),
+            proximity,
+        )
     feature_clusters = []
 
     for ligand in ligands:
@@ -58,6 +70,16 @@ def build_feature_clusters(ligands: List[LigandPharmacophore], proximity: float)
                     )
                 )
 
+    if logger.isEnabledFor(logging.DEBUG):
+        cluster_sizes = [len(cluster.features) for cluster in feature_clusters]
+        logger.debug(
+            "Finished Pharm3D feature clustering clusters=%d min_cluster_size=%d max_cluster_size=%d average_cluster_size=%.3f elapsed_ms=%.3f",
+            len(feature_clusters),
+            min(cluster_sizes, default=0),
+            max(cluster_sizes, default=0),
+            sum(cluster_sizes) / len(cluster_sizes) if cluster_sizes else 0.0,
+            (perf_counter() - started) * 1000,
+        )
     return feature_clusters
 
 

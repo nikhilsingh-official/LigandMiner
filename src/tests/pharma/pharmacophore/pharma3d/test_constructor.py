@@ -1,121 +1,61 @@
-import pathlib
-import sys
 import unittest
+from unittest.mock import patch
 
-from rich.progress import Progress
-
-PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[5]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from src.domain.ligand import Ligand, LigandRecord
-from src.domain.pharm import Pharm3DConfig, Pharm3DResult
+from src.app.progress import NullProgressSink
+from src.domain.pharm import Pharm3DConfig
 from src.pharma.pharmacophore.pharma3d.screening import Pharm3DScreening
 
-
-def L(smiles, i):
-    return Ligand(
-        record=LigandRecord(
-            protein_id="test",
-            ligand_id=str(i),
-            affinity_type="IC50",
-            affinity=100.0,
-            smiles=smiles,
-            inchi_key=str(i),
-        )
-    )
+from src.tests.pharma.pharmacophore.pharma3d._helpers import ligand
 
 
-class TestPharm3DConsensusAlignment(unittest.TestCase):
-    def test_single_ligand_training_builds_consensus(self):
-        screening = Pharm3DScreening(
-            Pharm3DConfig(
-                progress=Progress(transient=True),
-                feature_consensus_ratio=0.7,
-                pair_distance_support_ratio=0.3,
-                tolerance=1.0,
-                proximity=0.5,
-                pairwise_bounds_k=3,
-            )
+class TestPharm3DConstruction(unittest.TestCase):
+    def test_initializes_empty_screening_state(self):
+        screening = Pharm3DScreening(Pharm3DConfig())
+
+        self.assertIsNone(screening.consensus)
+        self.assertIsNone(screening.screen_dataset)
+        self.assertIsInstance(screening.progress, NullProgressSink)
+        self.assertIs(screening.matcher.feat_factory, screening.feat_factory)
+
+    def test_propagates_consensus_configuration(self):
+        config = Pharm3DConfig(
+            feature_consensus_ratio=0.61,
+            pair_distance_support_ratio=0.42,
+            tolerance=0.73,
+            proximity=1.17,
+            pairwise_bounds_k=2.4,
+            max_dist=14.0,
         )
 
-        screening.set_consensus([L("CCO", 1)])
+        builder = Pharm3DScreening(config).builder
 
-        self.assertIsNotNone(screening.consensus)
-        self.assertEqual(screening.consensus.num_training_ligands, 1)
-        self.assertGreater(len(screening.consensus.features), 0)
+        self.assertEqual(builder.clusterer.proximity, config.proximity)
+        self.assertEqual(builder.stats.feature_consensus_ratio, config.feature_consensus_ratio)
+        self.assertEqual(builder.stats.pair_distance_support_ratio, config.pair_distance_support_ratio)
+        self.assertEqual(builder.stats.feature_radius_k, config.tolerance)
+        self.assertEqual(builder.rdkit.k, config.pairwise_bounds_k)
+        self.assertEqual(builder.rdkit.max_dist, config.max_dist)
 
-    def test_repeated_ligand_training_does_not_collapse_to_empty_consensus(self):
-        training = [L("CCO", i) for i in range(20)]
-        candidates = [L("CCO", 1000 + i) for i in range(5)]
+    def test_propagates_geometry_configuration_to_preparation(self):
+        config = Pharm3DConfig(num_conformers=3, energy_window=1.25)
+        screening = Pharm3DScreening(config)
 
-        screening = Pharm3DScreening(
-            Pharm3DConfig(
-                progress=Progress(transient=True),
-                feature_consensus_ratio=0.7,
-                pair_distance_support_ratio=0.3,
-                tolerance=1.0,
-                proximity=0.5,
-                pairwise_bounds_k=3,
-            )
-        )
+        with patch(
+            "src.pharma.pharmacophore.pharma3d.screening.prepare_ligands_geometry",
+            return_value=[],
+        ) as prepare:
+            screening.set_screen_dataset([ligand("CCO", "candidate")])
 
-        screening.set_consensus(training)
+        self.assertEqual(prepare.call_args.kwargs["num_conformers"], 3)
+        self.assertEqual(prepare.call_args.kwargs["energy_window"], 1.25)
 
-        self.assertGreater(len(screening.consensus.features), 0)
-        self.assertGreater(len(screening.consensus.pairwise_stats.idx_a), 0)
+    def test_rejects_unknown_configuration_fields(self):
+        with self.assertRaises(TypeError):
+            Pharm3DConfig(does_not_exist=True)
 
-        screening.set_screen_dataset(candidates)
-        results = screening.compare_many_to_many()
-
-        scores = [res.embeddings[0].score for _, res in results if res.embeddings]
-
-        self.assertTrue(scores)
-        self.assertTrue(all(score < 0.25 for score in scores))
-
-    def test_compare_one_to_many(self):
-        screening = Pharm3DScreening(
-            Pharm3DConfig(
-                progress=Progress(transient=True),
-                feature_consensus_ratio=0.7,
-                pair_distance_support_ratio=0.3,
-                tolerance=1.0,
-                proximity=0.5,
-                pairwise_bounds_k=3,
-            )
-        )
-
-        results = screening.compare_one_to_many(
-            L("CCO", 2000),
-            [L("CCO", 2001), L("c1ccccc1", 2002)],
-        )
-
-        self.assertEqual(len(results), 2)
-        scores = {}
-        for lig, res in results:
-            scores[lig.record.ligand_id] = res.embeddings[0].score if res.embeddings else float("inf")
-
-        self.assertLess(scores["2001"], scores["2002"])
-
-    def test_compare_one_to_one(self):
-        screening = Pharm3DScreening(
-            Pharm3DConfig(
-                progress=Progress(transient=True),
-                feature_consensus_ratio=0.7,
-                pair_distance_support_ratio=0.3,
-                tolerance=1.0,
-                proximity=0.5,
-                pairwise_bounds_k=3,
-            )
-        )
-
-        lig, res = screening.compare_one_to_one(
-            L("CCO", 4000),
-            L("CCO", 4001),
-        )
-
-        self.assertEqual(lig.record.ligand_id, "4001")
-        self.assertIsInstance(res, Pharm3DResult)
+    def test_rejects_non_configuration_constructor_input(self):
+        with self.assertRaises(AttributeError):
+            Pharm3DScreening(None)
 
 
 if __name__ == "__main__":
