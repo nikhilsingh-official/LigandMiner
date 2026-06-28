@@ -42,6 +42,70 @@ class ProgressSink(Protocol):
 
     def child(self, prefix: str) -> "ProgressSink": ...
 
+    def group(self, key: str, message: str, total: int | None = None) -> "ProgressGroup": ...
+
+
+class ProgressGroup:
+    def __init__(self, sink: ProgressSink, key: str, message: str, total: int | None) -> None:
+        self._sink = sink
+        self._key = key
+        self._message = message
+        self._total = total
+        self._finished = False
+
+    @property
+    def raw_progress(self) -> Progress | None:
+        return self._sink.raw_progress
+
+    def __enter__(self) -> "ProgressGroup":
+        self._sink.start(self._key, self._message, self._total)
+        return self
+
+    def __exit__(self, exc_type, exc, tb) -> bool:
+        if exc_type is None and not self._finished:
+            self.finish()
+        return False
+
+    def update(self, *args, total: int | None = None, completed: int | None = None) -> None:
+        if len(args) == 1:
+            key, message = self._key, args[0]
+        elif len(args) == 2:
+            key, message = args
+        else:
+            raise TypeError("update() expects a message or a key and message")
+        self._sink.update(key, message, total=total, completed=completed)
+
+    def advance(self, *args, step: int = 1, message: str | None = None) -> None:
+        if not args:
+            key = self._key
+        elif isinstance(args[0], str):
+            key = args[0]
+            if len(args) > 1:
+                step = args[1]
+        else:
+            key = self._key
+            step = args[0]
+        self._sink.advance(key, step, message)
+
+    def finish(self, *args) -> None:
+        if len(args) == 0:
+            key, message = self._key, None
+        elif len(args) == 1:
+            key, message = self._key, args[0]
+        elif len(args) == 2:
+            key, message = args
+        else:
+            raise TypeError("finish() expects an optional message or a key and message")
+        self._sink.finish(key, message)
+        if key == self._key:
+            self._finished = True
+
+    def child(self, prefix: str) -> ProgressSink:
+        return self._sink.child(prefix)
+
+    def group(self, key: str, message: str, total: int | None = None) -> "ProgressGroup":
+        return ProgressGroup(self._sink.child(self._key), key, message, total)
+
 
 class NullProgressSink:
     @property
@@ -73,6 +137,9 @@ class NullProgressSink:
     def child(self, prefix: str) -> "NullProgressSink":
         return self
 
+    def group(self, key: str, message: str, total: int | None = None) -> ProgressGroup:
+        return ProgressGroup(self, key, message, total)
+
     def __enter__(self) -> "NullProgressSink":
         return self
 
@@ -101,6 +168,9 @@ class RichProgressSink:
             depth=self._depth + 1,
             tasks=self._tasks,
         )
+
+    def group(self, key: str, message: str, total: int | None = None) -> ProgressGroup:
+        return ProgressGroup(self, key, message, total)
 
     @property
     def raw_progress(self) -> Progress | None:

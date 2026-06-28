@@ -238,26 +238,30 @@ class UniProtService:
     def parse_uniprot_cross_references(
         self,
         uniprot_json: UniProtEntry,
-    ) -> tuple[InterProIDs, List[Structure]]:
+    ) -> tuple[SequenceAnnotations, List[Structure]]:
         cross_refs = uniprot_json.uniProtKBCrossReferences or []
 
         structures: List[Structure] = []
 
-        InterProIDs: InterProIDs = [
+        interpro_ids = [
             ref.id for ref in cross_refs if ref.database == "InterPro"
         ]
-
-        structure_refs = [ref for ref in cross_refs if ref.database in VALID_STRUCTURE_DATABASES]
+        annotations = SequenceAnnotations(interpro_ids=interpro_ids)
 
         for ref in cross_refs:
             if ref.database not in VALID_STRUCTURE_DATABASES:
                 continue
 
             if ref.database == "PDB":
+                property_data = self.get_experimental_structure_property_data_from_properties(
+                    ref.properties
+                )
                 structure = ExperimentalStructure(
                     struct_id=ref.id,
                     database=ref.database,
                     cif=f"https://files.rcsb.org/download/{ref.id}.cif",
+                    metadata=property_data.metadata,
+                    chains=property_data.chains,
                 )
 
             elif ref.database == "SMR":
@@ -420,8 +424,9 @@ class UniProtService:
         progress.finish(
             "interpro_group",
             (
-                f"Found InterPro {least_abstracted['type']}: "
-                f"{least_abstracted['id']}"
+                f"Found InterPro {least_abstracted['type']}: {least_abstracted['id']}"
+                if least_abstracted
+                else "No InterPro family or domain found"
             ),
         )
         return least_abstracted
@@ -449,6 +454,13 @@ class UniProtService:
             interpro_ids,
             progress.child("interpro"),
         )
+
+        if least_abstracted is None:
+            progress.finish(
+                "manage_interpro",
+                f"Found 0 candidate similar proteins to {uniprot_id}",
+            )
+            return []
 
         progress.update(
             "manage_interpro",
@@ -737,13 +749,23 @@ class StructureMetadataService:
         uniprot: str,
     ):
         if structure.database == "SMR":
-            structure = self.find_best_swiss_model_structure(structure, uniprot)
+            intermediate_json = self.get_swiss_model_intermediate(structure.struct_id)
+            structures = self.parse_swiss_model_intermediate_json(intermediate_json, uniprot)
+            structures = [
+                self.feature_structure_enrichment(candidate, domain, active_sites)
+                for candidate in structures
+            ]
+            scored_structures = self.score_swiss_model_structures(structures)
+            structure = max(
+                scored_structures,
+                key=lambda candidate: candidate.analysis.structural_plausibility,
+            )
         elif structure.database == "AlphaFoldDB":
             structure = self.find_best_alpha_fold_structure(structure, uniprot)
+            structure = self.feature_structure_enrichment(structure, domain, active_sites)
         else:
             structure = self.score_pdb_structure(structure)
-
-        structure = self.feature_structure_enrichment(structure, domain, active_sites)
+            structure = self.feature_structure_enrichment(structure, domain, active_sites)
         structure = self.add_paths(uniprot, structure)
         return structure
 

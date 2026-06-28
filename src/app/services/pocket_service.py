@@ -8,7 +8,7 @@ import gemmi
 import pandas as pd
 
 from src.domain.pipeline import HasAnnotatedStructures, HasIdentifiedStructures, HasStructures
-from src.domain.structure import Pocket, Structure
+from src.domain.structure import ExperimentalStructure, Pocket, Structure
 
 from ..protein_services import UniProtService
 

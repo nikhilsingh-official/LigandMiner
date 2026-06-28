@@ -64,6 +64,7 @@ class LigandMinerApplication:
         )
 
         self.uniprot_service.prepare_protein_metadata(
+            target_protein,
             uniprot_json,
             progress.child("target_metadata"),
         )

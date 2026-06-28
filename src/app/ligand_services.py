@@ -273,8 +273,10 @@ class ScreeningService:
 
         ligs = sorted(
             training_ligands,
-            key=lambda l: l.record.affinity or 0,
-            reverse=True,
+            key=lambda l: (
+                l.record.affinity is None,
+                l.record.affinity if l.record.affinity is not None else float("inf"),
+            ),
         )
 
         n = len(ligs)
@@ -309,7 +311,6 @@ class ScreeningService:
         )
 
         pharm2d = Pharm2DScreening(Pharm2DConfig())
-        pharm2d.close()
         pharm3d = Pharm3DScreening(
             Pharm3DConfig(
                 feature_consensus_ratio=0.4,
@@ -434,4 +435,5 @@ class ScreeningService:
             progress.advance("screen_ranked_proteins")
 
         progress.finish("screen_ranked_proteins", "Pharmacophore screening complete")
+        pharm2d.close()
         return results

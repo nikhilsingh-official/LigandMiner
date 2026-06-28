@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import gemmi
 import numpy as np
 from Bio.PDB import NeighborSearch
 from Bio.PDB.Atom import Atom as BioAtom
